@@ -28,11 +28,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" data-theme="light">
       <body
-        className={`${manrope.variable} ${spaceGrotesk.variable} antialiased`}
+        className={`${manrope.variable} ${spaceGrotesk.variable} bg-default-color  text-primary-500 `}
       >
-        {children}
+        <main className=""> {children} </main>
       </body>
     </html>
   );
