@@ -28,9 +28,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" data-theme="light">
+    <html lang="en" data-theme="dark">
       <body
-        className={`${manrope.variable} ${spaceGrotesk.variable} bg-default-color  text-primary-500 `}
+        className={`${manrope.variable} ${spaceGrotesk.variable} font-sans bg-default-color  text-primary-500 `}
       >
         <main className=""> {children} </main>
       </body>
