@@ -3,7 +3,7 @@ import logo from "../../public/DreamAgency-Logo.png";
 
 export default function Logo() {
   return (
-    <div className=" relative w-12 h-12">
+    <div className=" relative place-self-center w-12 h-12 md:order-0">
       <Image
         className="object-cover"
         fill

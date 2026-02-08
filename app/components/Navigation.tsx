@@ -28,7 +28,7 @@ const navigationItems = [
 export default function Navigation({ className }: { className: string }) {
   return (
     <ul
-      className={` ${className} flex flex-col w-full h-full items-center justify-center gap-10 text-xl font-semibold md:flex-row  md:text-lg`}
+      className={` ${className} self-center flex flex-col w-full h-full items-center justify-center gap-10 text-xl font-semibold md:flex-row  md:text-lg`}
     >
       {navigationItems.map((item) => (
         <li
