@@ -13,7 +13,7 @@ export default function HamburgerMenu({ className }: { className: string }) {
       <div className=" relative z-50 cursor-pointer">X</div>
       {isOpen && (
         <div className=" z-30 absolute inset-0 bg-secondary-default">
-          <Navigation className="md:hidden" />
+          <Navigation className="lg:hidden" />
         </div>
       )}
     </div>
