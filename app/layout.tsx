@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Manrope, Space_Grotesk } from "next/font/google";
 import "./globals.css";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 const manrope = Manrope({
   variable: "--font-manrope-sans",
@@ -28,11 +30,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" data-theme="light">
+    <html lang="en" data-theme="">
       <body
-        className={`${manrope.variable} ${spaceGrotesk.variable} font-sans bg-default-color  text-primary-500 `}
+        className={`${manrope.variable} ${spaceGrotesk.variable} font-sans bg-default-color text-text-default`}
       >
+        <Header />
         <main className=""> {children} </main>
+        <Footer />
       </body>
     </html>
   );
