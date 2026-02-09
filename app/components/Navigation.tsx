@@ -3,36 +3,27 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-const navigationItems = [
-  {
-    label: "Home",
-    href: "/",
-  },
-  {
-    label: "Consultants",
-    href: "/consultants",
-  },
-  {
-    label: "Courses",
-    href: "/courses",
-  },
-  {
-    label: "About",
-    href: "/about",
-  },
-  {
-    label: "Contact",
-    href: "/contact",
-  },
-];
+type NavigationItem = {
+  label: string;
+  href: string;
+  icon?: string;
+};
 
-export default function Navigation({ className }: { className: string }) {
+interface NavigationProps {
+  className?: string;
+  bulletPoint?: boolean;
+  navigationItems: NavigationItem[];
+}
+
+export default function Navigation({
+  className,
+  bulletPoint,
+  navigationItems,
+}: NavigationProps) {
   const pathname = usePathname();
 
   return (
-    <ul
-      className={` ${className} self-center flex flex-col w-full h-full items-center justify-center gap-10 text-xl font-semibold lg:flex-row  lg:text-lg`}
-    >
+    <ul className={` ${className}  gap-10 `}>
       {navigationItems.map((item) => (
         <li
           className="text-text-default hover:text-primary-500 transition-all "
@@ -42,6 +33,11 @@ export default function Navigation({ className }: { className: string }) {
             className={`${pathname === item.href ? "text-primary-600" : ""} `}
             href={item.href}
           >
+            {bulletPoint ? (
+              <span className="font-extrabold text-2xl">&bull;</span>
+            ) : (
+              item?.icon && "icon"
+            )}{" "}
             {item.label}
           </Link>
         </li>
