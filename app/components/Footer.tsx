@@ -43,8 +43,8 @@ export default function Footer() {
           with <span className="text-rose-700 text-2xl">&hearts;</span>
         </p>
         <p>
-          All rights reserved{" "}
-          <span className="text-primary-500 font-bold ">&copy;</span>
+          <span className="text-primary-500 font-bold ">&copy;</span> All rights
+          reserved
         </p>
       </div>
     </div>
