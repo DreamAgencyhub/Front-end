@@ -1,0 +1,7 @@
+{
+  "icon": true,
+  "svgProps": {
+    "stroke": "currentColor",
+    "fill": "none"
+  }
+}
