@@ -7,27 +7,31 @@ import Navigation from "./Navigation";
 
 export default function Footer() {
   return (
-    <div className="grid grid-cols-1 bg-secondary-default md:grid-cols-2 lg:grid-cols-4 rounded-t-4xl ">
-      <div className="flex flex-col p-4 ">
-        <h3 className="text-primary-500 text-2xl font-black [font-family:var(--font-space-grotesk)] ">
-          Dream Agency
-        </h3>
-        <Navigation
-          className="font-medium"
-          navigationItems={navigationRoutesItems}
-          bulletPoint
-        />
+    <div className=" bg-secondary-default rounded-t-4xl ">
+      <div className="max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  ">
+          <div className="flex flex-col p-4 ">
+            <h3 className="text-primary-500 text-2xl font-black [font-family:var(--font-space-grotesk)] ">
+              Dream Agency
+            </h3>
+            <Navigation
+              className="font-medium"
+              navigationItems={navigationRoutesItems}
+              bulletPoint
+            />
+          </div>
+          <div className="flex flex-col p-4 ">
+            <h3 className="text-primary-500 text-2xl font-black [font-family:var(--font-space-grotesk)] ">
+              Social Media
+            </h3>
+            <Navigation
+              className="font-medium"
+              navigationItems={navigationSocialMedia}
+            />
+          </div>
+        </div>
       </div>
-      <div className="flex flex-col p-4 ">
-        <h3 className="text-primary-500 text-2xl font-black [font-family:var(--font-space-grotesk)] ">
-          Social Media
-        </h3>
-        <Navigation
-          className="font-medium"
-          navigationItems={navigationSocialMedia}
-        />
-      </div>
-      <div className="col-span-full border-t border-primary-500 p-4 flex flex-col md:flex-row gap-4 items-center justify-around">
+      <div className=" border-t border-primary-500 p-4 flex flex-col md:flex-row gap-4 items-center justify-around">
         <p className="flex flex-row items-center gap-1">
           Designed and developed by{" "}
           <Link

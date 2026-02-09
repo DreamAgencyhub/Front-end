@@ -31,7 +31,7 @@ export default function Button({
   if (directTo)
     return (
       <Link
-        className={` ${className} ${sizeStyle} ${variantStyle} text-gray-50 text-center rounded-xl shadow-[0px_0px_8px_5px] shadow-primary-100  `}
+        className={` ${className} ${sizeStyle} ${variantStyle} text-gray-50 text-center rounded-xl shadow-[0px_0px_8px_5px] shadow-primary-100 dark:shadow-primary-900  `}
         href={directTo}
       >
         {children}

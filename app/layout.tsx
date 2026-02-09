@@ -30,12 +30,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" data-theme="">
+    <html lang="en" data-theme="light">
       <body
         className={`${manrope.variable} ${spaceGrotesk.variable} font-sans bg-default-color text-text-default`}
       >
         <Header />
-        <main className=""> {children} </main>
+        <main className="max-w-7xl mx-auto min-h-screen">{children}</main>
         <Footer />
       </body>
     </html>

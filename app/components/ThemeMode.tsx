@@ -8,7 +8,7 @@ export default function ThemeMode() {
   const handleModeToggle = () => setIsDark(!isDark);
 
   return (
-    <button className="lg:order-2" onClick={handleModeToggle}>
+    <button className="lg:order-3" onClick={handleModeToggle}>
       {" "}
       {isDark ? "Dark" : "light"}{" "}
     </button>
