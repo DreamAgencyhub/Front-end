@@ -32,10 +32,10 @@ export default function RootLayout({
   return (
     <html lang="en" data-theme="light">
       <body
-        className={`${manrope.variable} ${spaceGrotesk.variable} font-sans bg-default-color text-text-default`}
+        className={`${manrope.variable} ${spaceGrotesk.variable} font-sans bg-default-color overflow-x-hidden relative text-text-default`}
       >
         <Header />
-        <main className="max-w-7xl mx-auto min-h-screen">{children}</main>
+        <main className="max-w-7xl px-4 mx-auto min-h-screen ">{children}</main>
         <Footer />
       </body>
     </html>

@@ -6,6 +6,7 @@ export { default as Discussion } from "./Discussion";
 export { default as ELearning } from "./ELearning";
 export { default as Group } from "./Group";
 export { default as GroupFill } from "./GroupFill";
+export { default as HeroSectionWave } from "./HeroSectionWave";
 export { default as IconAwesomeInstagram } from "./IconAwesomeInstagram";
 export { default as IconAwesomeTelegramPlane } from "./IconAwesomeTelegramPlane";
 export { default as IconMaterialEmail } from "./IconMaterialEmail";

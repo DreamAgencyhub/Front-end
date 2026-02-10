@@ -1,5 +1,5 @@
 import Image from "next/image";
-import logo from "../../public/DreamAgency-Logo.png";
+import logo from "@/public/assets/images/DreamAgency-Logo.png";
 import Link from "next/link";
 
 export default function Logo() {
