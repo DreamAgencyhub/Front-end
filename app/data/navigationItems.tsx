@@ -1,3 +1,9 @@
+import {
+  IconAwesomeInstagram,
+  IconAwesomeTelegramPlane,
+  IconMaterialEmail,
+} from "@/app/components/icons";
+
 export const navigationRoutesItems = [
   {
     label: "Home",
@@ -24,17 +30,17 @@ export const navigationRoutesItems = [
 export const navigationSocialMedia = [
   {
     label: "dreamagencyteamm@gmail.com",
-    href: "/",
-    icon: "",
+    href: "mailto:dreamagencyteamm@gmail.com",
+    icon: <IconMaterialEmail className="text-primary-500 text-xl " />,
   },
   {
     label: "dreamAgency",
-    href: "/",
-    icon: "",
+    href: "https://www.instagram.com",
+    icon: <IconAwesomeInstagram className="text-primary-500 text-xl " />,
   },
   {
     label: "dreamAgencyChannel",
-    href: "/courses",
-    icon: "",
+    href: "tg://resolve?domain=Hamit2002",
+    icon: <IconAwesomeTelegramPlane className="text-primary-500 text-xl " />,
   },
 ];

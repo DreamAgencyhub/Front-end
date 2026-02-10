@@ -2,11 +2,12 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { ReactNode } from "react";
 
 type NavigationItem = {
   label: string;
   href: string;
-  icon?: string;
+  icon?: ReactNode;
 };
 
 interface NavigationProps {
@@ -24,21 +25,23 @@ export default function Navigation({
 
   return (
     <ul className={` ${className}  gap-10 `}>
-      {navigationItems.map((item) => (
+      {navigationItems.map(({ label, href, icon: Icon }) => (
         <li
-          className="text-text-default hover:text-primary-500 transition-all "
-          key={item.label}
+          className="text-text-default  hover:text-primary-500 transition-all py-1 "
+          key={label}
         >
           <Link
-            className={`${pathname === item.href ? "text-primary-600" : ""} `}
-            href={item.href}
+            className={`${
+              pathname === href ? "text-primary-600" : ""
+            } flex flex-row items-center gap-2 `}
+            href={href}
           >
             {bulletPoint ? (
               <span className="font-extrabold text-2xl">&bull;</span>
             ) : (
-              item?.icon && "icon"
+              <span className="py-2">{Icon}</span>
             )}{" "}
-            {item.label}
+            {label}
           </Link>
         </li>
       ))}

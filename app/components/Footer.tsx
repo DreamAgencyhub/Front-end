@@ -7,10 +7,10 @@ import Navigation from "./Navigation";
 
 export default function Footer() {
   return (
-    <div className=" bg-secondary-default rounded-t-4xl ">
+    <div className=" bg-secondary-default rounded-t-4xl pt-6 ">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  ">
-          <div className="flex flex-col p-4 ">
+          <div className="flex flex-col p-4 gap-2 ">
             <h3 className="text-primary-500 text-2xl font-black [font-family:var(--font-space-grotesk)] ">
               Dream Agency
             </h3>
@@ -20,7 +20,7 @@ export default function Footer() {
               bulletPoint
             />
           </div>
-          <div className="flex flex-col p-4 ">
+          <div className="flex flex-col p-4 gap-2">
             <h3 className="text-primary-500 text-2xl font-black [font-family:var(--font-space-grotesk)] ">
               Social Media
             </h3>
@@ -37,6 +37,8 @@ export default function Footer() {
           <Link
             className="text-primary-500 font-bold"
             href={"https://github.com/hamit19"}
+            target="_blank"
+            rel="noopener noreferrer"
           >
             Hamid Hassani
           </Link>{" "}
