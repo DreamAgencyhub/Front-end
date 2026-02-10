@@ -7,8 +7,8 @@ import ThemeMode from "./ThemeMode";
 
 export default function Header() {
   return (
-    <div className=" bg-secondary-default">
-      <div className="max-w-7xl mx-auto">
+    <div className="bg-secondary-default">
+      <div className="max-w-7xl mx-auto px-8">
         <div className="grid grid-cols-4 lg:grid-cols-9 w-full py-4 items-center text-text-default">
           <HamburgerMenu className={"lg:hidden"} />
           <Navigation
@@ -19,7 +19,7 @@ export default function Header() {
             }
           />
           <Logo />
-          <ThemeMode />
+          <ThemeMode className="lg:order-3 place-self-center " />
           <Button
             className={"lg:order-last"}
             directTo="/auth/login"
