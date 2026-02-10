@@ -1,10 +1,17 @@
 export { default as Analytics } from "./Analytics";
+export { default as BurgerMenuSvgrepoCom } from "./BurgerMenuSvgrepoCom";
 export { default as Clarification } from "./Clarification";
+export { default as CloseXSvgrepoCom } from "./CloseXSvgrepoCom";
 export { default as Discussion } from "./Discussion";
 export { default as ELearning } from "./ELearning";
 export { default as Group } from "./Group";
 export { default as GroupFill } from "./GroupFill";
+export { default as IconAwesomeInstagram } from "./IconAwesomeInstagram";
+export { default as IconAwesomeTelegramPlane } from "./IconAwesomeTelegramPlane";
+export { default as IconMaterialEmail } from "./IconMaterialEmail";
 export { default as Increase } from "./Increase";
 export { default as Leadership } from "./Leadership";
+export { default as Moon } from "./Moon";
 export { default as OnlineSupport } from "./OnlineSupport";
 export { default as OnlineCourse } from "./OnlineCourse";
+export { default as Sun } from "./Sun";

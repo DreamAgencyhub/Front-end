@@ -1,0 +1,17 @@
+import * as React from "react";
+import type { SVGProps } from "react";
+const SvgMoon = (props: SVGProps<SVGSVGElement>) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="1em"
+    height="1em"
+    data-name="Layer 1"
+    viewBox="0 0 74.46 70.34"
+    stroke="currentColor"
+    fill="none"
+    {...props}
+  >
+    <path d="M45.26 14.88c-1.68 8.69.72 16.73 6.26 22.36s13.49 8.32 22.94 6.84c-2.88 35.7-53.75 34.64-55.72-.94-.4-14.66 11.32-28.14 26.52-28.26m24.07 33.77c-16.93-.38-28.5-12.94-28.77-28.92-19.5 4.94-23.82 30.13-8.65 41.6 12.32 10.36 33.71 4.45 37.42-12.68M26.6 6.1c2.18 1.36-2.37.28-5.49 6.34-1.17 2.26-.58-2-4.68-4.41l-1.84-1.09c-2.24-1.32 2.39-.86 4.67-4.65L20.3.56c1.25-2.08.75 2.07 4.66 4.5l1.65 1.03ZM-.003 28.486l4.715-4.604 4.555 4.665-4.715 4.604z" />
+  </svg>
+);
+export default SvgMoon;
