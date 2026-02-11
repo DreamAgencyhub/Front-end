@@ -10,12 +10,13 @@ type InfoWidget = {
 
 interface InfoWidgetProps {
   data?: InfoWidget[];
+  className?: string;
 }
 
-export default function InfoWidget({ data }: InfoWidgetProps) {
+export default function InfoWidget({ data, className }: InfoWidgetProps) {
   return data?.map((item) => (
     <Link
-      className="bg-secondary-muted flex flex-col items-center justify-around rounded-3xl shadow-md p-2 w-38 h-38 lg:w-32 lg:h-32   "
+      className={` ${className} bg-secondary-muted flex flex-col items-center justify-around rounded-3xl shadow-md p-2 w-38 h-38 `}
       key={item.label}
       href={item.href}
     >

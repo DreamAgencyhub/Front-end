@@ -33,8 +33,11 @@ export default function HeroSection() {
         </div>
         <div className="col-span-full h-screen ">
           <HeroSectionWave className="absolute  -z-10 -left-2 -right-2 lg:-right-4 lg:-left-4 scale-250 md:scale-100   " />
-          <div className=" absolute lg:relative lg:left-auto lg:right-auto left-0 right-0 flex flex-col gap-8 md:gap-18 2xl:mt-48 items-center my-14 lg:flex-row lg:justify-center bg-primary-500 md:mt-30 xl:mt-38 lg:bg-transparent">
-            <InfoWidget data={infoWidgetsData} />
+          <div className=" grid place-items-center md:place-items-end md:grid-cols-5 md:grid-rows-2 lg:grid-rows-1  justify-center absolute lg:relative lg:left-auto lg:right-auto left-0 right-0  gap-8 lg:gap-0  2xl:mt-48  my-14  bg-primary-500 md:mt-24 pb-8 xl:mt-38 lg:bg-transparent  ">
+            <InfoWidget
+              className="col-span-1 md:col-span-2 lg:col-span-1 "
+              data={infoWidgetsData}
+            />
           </div>
         </div>
       </div>
