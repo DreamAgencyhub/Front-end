@@ -10,7 +10,7 @@ interface Button {
   className?: string;
 }
 
-const smallSize = `text-xs px-2 py-1`;
+const smallSize = `text-xs px-3 py-2 rounded-lg `;
 
 const mediumSize = ` text-based px-4 py-3 `;
 
@@ -41,7 +41,7 @@ export default function Button({
   return (
     <button
       disabled={isDisabled}
-      className={`${className} ${sizeStyle} ${variantStyle}  text-gray-50 text-center rounded-xl `}
+      className={`${className} ${sizeStyle} ${variantStyle} cursor-pointer text-nowrap text-gray-50 text-center ring-0 `}
     >
       {children}
     </button>

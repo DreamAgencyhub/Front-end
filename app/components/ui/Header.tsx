@@ -1,4 +1,4 @@
-import { navigationRoutesItems } from "../data/navigationItems";
+import { navigationRoutesItems } from "../../data/navigationItems";
 import Button from "./Button";
 import HamburgerMenu from "./HamburgerMenu";
 import Logo from "./Logo";

@@ -2,7 +2,7 @@ import Link from "next/link";
 import {
   navigationRoutesItems,
   navigationSocialMedia,
-} from "../data/navigationItems";
+} from "../../data/navigationItems";
 import Navigation from "./Navigation";
 
 export default function Footer() {

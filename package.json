@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "icons": "svgr --icon --typescript app/assets/icons -d app/components/icons"
+    "icons": "svgr --icon --typescript --ignore-existing app/assets/icons -d app/components/icons"
   },
   "dependencies": {
     "next": "16.1.6",

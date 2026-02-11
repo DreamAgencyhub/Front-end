@@ -10,7 +10,12 @@ const SvgBurgerMenuSvgrepoCom = (props: SVGProps<SVGSVGElement>) => (
     stroke="currentColor"
     {...props}
   >
-    <path strokeLinecap="round" strokeWidth={2} d="M4 18h16M4 12h16M4 6h16" />
+    <path
+      stroke="#000"
+      strokeLinecap="round"
+      strokeWidth={2}
+      d="M4 18h16M4 12h16M4 6h16"
+    />
   </svg>
 );
 export default SvgBurgerMenuSvgrepoCom;
