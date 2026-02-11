@@ -3,8 +3,5 @@
   "svgProps": {
     "stroke": "currentColor",
     "fill": "none"
-  },
-  "path": {
-    "className": ""
   }
 }
