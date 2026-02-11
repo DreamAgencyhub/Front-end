@@ -10,6 +10,7 @@ export { default as HeroSectionWave } from "./HeroSectionWave";
 export { default as IconAwesomeInstagram } from "./IconAwesomeInstagram";
 export { default as IconAwesomeTelegramPlane } from "./IconAwesomeTelegramPlane";
 export { default as IconMaterialEmail } from "./IconMaterialEmail";
+export { default as IdeaBusiness } from "./IdeaBusiness";
 export { default as Increase } from "./Increase";
 export { default as Leadership } from "./Leadership";
 export { default as Moon } from "./Moon";

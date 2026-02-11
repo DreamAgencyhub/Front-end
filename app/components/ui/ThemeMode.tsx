@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Moon, Sun } from "./icons";
+import { Moon, Sun } from "../icons";
 
 export default function ThemeMode({ className }: { className?: string }) {
   const [isDark, setIsDark] = useState<boolean>(false);

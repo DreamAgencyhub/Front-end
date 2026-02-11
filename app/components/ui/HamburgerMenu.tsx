@@ -2,8 +2,8 @@
 
 import { useState } from "react";
 import Navigation from "./Navigation";
-import { navigationRoutesItems } from "../data/navigationItems";
-import { BurgerMenuSvgrepoCom, CloseXSvgrepoCom } from "./icons";
+import { navigationRoutesItems } from "../../data/navigationItems";
+import { BurgerMenuSvgrepoCom, CloseXSvgrepoCom } from "../icons";
 
 export default function HamburgerMenu({ className }: { className: string }) {
   const [isOpen, setIsOpen] = useState<boolean>(false);

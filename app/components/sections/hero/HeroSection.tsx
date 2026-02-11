@@ -1,6 +1,8 @@
 import Image from "next/image";
 import heroImage from "@/public/assets/images/HeroImage.png";
 import { HeroSectionWave } from "@/app/components/icons";
+import InfoWidget from "./InfoWidget";
+import { infoWidgetsData } from "./heroSectoinData";
 
 export default function HeroSection() {
   return (
@@ -29,8 +31,11 @@ export default function HeroSection() {
             alt="a-successful-businessman"
           />
         </div>
-        <div className="col-span-full ">
-          <HeroSectionWave className="absolute z-40 -left-2 -right-2 lg:-right-4 lg:-left-4 " />
+        <div className="col-span-full h-screen ">
+          <HeroSectionWave className="absolute -z-10 -left-2 -right-2 lg:-right-4 lg:-left-4 scale-250 md:scale-100   " />
+          <div className=" absolute lg:relative lg:left-auto lg:right-auto left-0 right-0 flex flex-col gap-8 md:gap-18 2xl:mt-48 items-center my-14 lg:flex-row lg:justify-center bg-primary-500 md:mt-30 xl:mt-38 lg:bg-transparent">
+            <InfoWidget data={infoWidgetsData} />
+          </div>
         </div>
       </div>
     </div>
