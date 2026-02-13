@@ -3,7 +3,7 @@ import StatisticsSection from "./components/sections/statistics/StatisticsSectio
 
 export default function page() {
   return (
-    <div>
+    <div className="grid grid-cols-1">
       <HeroSection />
       <StatisticsSection />
     </div>
