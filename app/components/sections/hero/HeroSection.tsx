@@ -6,7 +6,7 @@ import { infoWidgetsData } from "./heroSectoinData";
 
 export default function HeroSection() {
   return (
-    <div>
+    <div className="col-span-1">
       <div className="grid grid-cols-1 pt-8 md:grid-cols-2">
         <div className="">
           <h1 className=" text-4xl/13  [font-family:var(--font-space-grotesk)] md:text-5xl/16 xl:text-6xl font-black text-primary-500">
@@ -31,7 +31,7 @@ export default function HeroSection() {
             alt="a-successful-businessman"
           />
         </div>
-        <div className="col-span-full h-screen ">
+        <div className="col-span-full h-screen md:h-[60vh] lg:h-auto xl:h-[55vh]">
           <HeroSectionWave className="absolute  -z-10 -left-2 -right-2 lg:-right-4 lg:-left-4 scale-250 md:scale-100   " />
           <div className=" grid place-items-center md:place-items-end md:grid-cols-5 md:grid-rows-2 lg:grid-rows-1  justify-center absolute lg:relative lg:left-auto lg:right-auto left-0 right-0  gap-8 lg:gap-0  2xl:mt-48  my-14  bg-primary-500 md:mt-24 pb-8 xl:mt-38 lg:bg-transparent  ">
             <InfoWidget
