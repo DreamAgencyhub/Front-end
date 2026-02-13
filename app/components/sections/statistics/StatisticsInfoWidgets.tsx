@@ -16,7 +16,7 @@ export default function StatisticsInfoWidgets({
   return info?.map(({ label, number, icon }) => (
     <div
       key={label}
-      className="flex flex-col items-center justify-around p-4 rounded-2xl gap-1 lg:gap-4 bg-secondary-default "
+      className="flex flex-col items-center justify-around p-4 rounded-2xl gap-1 lg:gap-4 bg-secondary-default w-full h-full "
     >
       <div className="flex flex-row items-center gap-2 font-bold text-lg md:text-xl text-text-default  ">
         <span>{number}</span>
