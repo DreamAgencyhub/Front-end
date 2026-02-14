@@ -4,11 +4,17 @@ type IconBoxProps = {
   title?: string;
   text?: string;
   icon?: ReactNode;
+  className?: string;
 };
 
-export default function IconBox({ text, title, icon }: IconBoxProps) {
+export default function IconBox({
+  text,
+  title,
+  icon,
+  className,
+}: IconBoxProps) {
   return (
-    <div className="place-self-center flex flex-col">
+    <div className={` ${className} flex flex-col`}>
       <div className="flex flex-row gap-5 items-center ">
         <div className="bg-primary-500 text-gray-50 rounded-3xl p-3 w-18 lg:w-24 lg:rounded-4xl lg:text-5xl aspect-square flex justify-center items-center shadow-[0px_0px_20px_5px] shadow-primary-200 dark:shadow-primary-900 text-4xl">
           {icon}
