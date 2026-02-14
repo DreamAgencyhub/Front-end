@@ -10,11 +10,17 @@ interface Button {
   className?: string;
 }
 
-const smallSize = `text-xs px-3 py-2 rounded-lg `;
+const sizes = {
+  smallSize: `text-xs px-3 py-2 rounded-lg `,
 
-const mediumSize = ` text-based px-4 py-3 `;
+  mediumSize: ` text-based px-4 py-3 `,
+};
 
-const variantPrimary = ` bg-primary-500 hover:bg-primary-600 transition-all hover:shadow-none `;
+const variants = {
+  variantPrimary: ` bg-primary-500 hover:bg-primary-600 transition-all hover:shadow-none shadow-[0px_0px_8px_5px] shadow-primary-100 dark:shadow-primary-900 `,
+
+  variantSecondary: `bg-transparent border-2 border-primary-500  hover:bg-primary-500  hover:text-secondary-default hover:dark:text-text-default transition-all `,
+};
 
 export default function Button({
   children,
@@ -25,13 +31,22 @@ export default function Button({
   className,
 }: Button) {
   const sizeStyle =
-    size === "small" ? `${smallSize} ` : size === "medium" ? mediumSize : "";
-  const variantStyle = variant === "primary" ? variantPrimary : "";
+    size === "small"
+      ? `${sizes?.smallSize} `
+      : size === "medium"
+      ? sizes?.mediumSize
+      : "";
+  const variantStyle =
+    variant === "primary"
+      ? variants?.variantPrimary
+      : variant === "secondary"
+      ? variants?.variantSecondary
+      : "";
 
   if (directTo)
     return (
       <Link
-        className={` ${className} ${sizeStyle} ${variantStyle} text-gray-50 text-center rounded-xl shadow-[0px_0px_8px_5px] shadow-primary-100 dark:shadow-primary-900  `}
+        className={` ${className} ${sizeStyle} ${variantStyle} text-gray-50 text-center rounded-xl`}
         href={directTo}
       >
         {children}
