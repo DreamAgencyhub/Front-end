@@ -6,32 +6,38 @@ import {
   ReactNode,
   SetStateAction,
   useContext,
+  useEffect,
   useState,
 } from "react";
 
 interface SliderContext {
-  next?: number;
-  prev?: number;
-  showItems?: number;
-  setNext?: Dispatch<SetStateAction<number>>;
-  setPrev?: Dispatch<SetStateAction<number>>;
-  setShowItems?: Dispatch<SetStateAction<number>>;
+  next: () => void;
+  prev: () => void;
+  currentIndex: number;
+  setTotalItems: Dispatch<SetStateAction<number>>;
+  setVisibleItems: Dispatch<SetStateAction<number>>;
 }
 
-const SliderContext = createContext<SliderContext>({
-  next: 0,
-  prev: 0,
-  showItems: 1,
-});
+const SliderContext = createContext<SliderContext | null>(null);
 
 export default function SliderProvider({ children }: { children: ReactNode }) {
-  const [next, setNext] = useState(0);
-  const [prev, setPrev] = useState(0);
-  const [showItems, setShowItems] = useState(1);
+  const [currentIndex, setCurrentIndex] = useState<number>(0);
+  const [totalItems, setTotalItems] = useState<number>(0);
+  const [visibleItems, setVisibleItems] = useState<number>(1);
+
+  const maxIndex = Math.max(totalItems - visibleItems, 0);
+
+  const next = () => setCurrentIndex((prev) => Math.min(prev + 1, maxIndex));
+
+  const prev = () => setCurrentIndex((prev) => Math.max(prev - 1, 0));
+
+  useEffect(() => {
+    return () => setCurrentIndex((prev) => Math.min(prev, maxIndex));
+  }, [maxIndex]);
 
   return (
     <SliderContext.Provider
-      value={{ next, setNext, setPrev, setShowItems, prev, showItems }}
+      value={{ next, prev, setTotalItems, setVisibleItems, currentIndex }}
     >
       {children}
     </SliderContext.Provider>
@@ -42,7 +48,7 @@ export function useSlider() {
   const context = useContext(SliderContext);
 
   if (!context)
-    throw new Error("You are using Slider context out side of its provider!");
+    throw new Error("useSlider must be used inside SliderProvider!");
 
   return context;
 }
