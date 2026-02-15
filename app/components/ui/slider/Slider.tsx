@@ -11,7 +11,7 @@ function Slider({ children }: { children: ReactNode }) {
 
   return (
     <SliderProvider>
-      <div className=" bg-secondary-default rounded-4xl flex flex-col lg:flex-row items-center justify-end py-4 px-8 lg:px-20  ">
+      <div className=" bg-secondary-default rounded-4xl flex flex-col lg:flex-row items-center justify-end py-4 px-8 lg:px-20 ">
         {children}
       </div>
     </SliderProvider>
