@@ -3,6 +3,8 @@
 import { Operator } from "../../icons";
 import Slider from "../../ui/slider/Slider";
 
+const items = [{ text: "test1" }, { text: "test2" }, { text: "test3" }];
+
 export default function ConsultantsSection() {
   console.log(Slider);
   return (
@@ -18,7 +20,9 @@ export default function ConsultantsSection() {
           linkText="More..."
         />
         <Slider.Track>
-          <span>ddd</span>
+          {items.map((item, index) => (
+            <Slider.Item key={index} text={item.text} />
+          ))}
         </Slider.Track>
       </Slider>
     </div>

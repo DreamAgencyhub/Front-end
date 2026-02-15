@@ -5,13 +5,14 @@ import SliderProvider, { useSlider } from "./SliderContext";
 
 import { SliderTrack } from "./SliderTrack";
 import SliderIconBox from "./SliderIconBox";
+import SliderItem from "./SliderItem";
 
 function Slider({ children }: { children: ReactNode }) {
   const { next, prev } = useSlider();
 
   return (
     <SliderProvider>
-      <div className=" bg-secondary-default rounded-4xl flex flex-col lg:flex-row items-center justify-end py-4 px-8 lg:px-20 ">
+      <div className=" bg-secondary-default rounded-4xl flex flex-col md:flex-row items-center justify-end py-4 px-8 lg:px-20 ">
         {children}
       </div>
     </SliderProvider>
@@ -20,5 +21,6 @@ function Slider({ children }: { children: ReactNode }) {
 
 Slider.Track = SliderTrack;
 Slider.IconBox = SliderIconBox;
+Slider.Item = SliderItem;
 
 export default Slider;
