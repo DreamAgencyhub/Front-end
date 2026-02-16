@@ -3,10 +3,17 @@
 import { Operator } from "../../icons";
 import Slider from "../../ui/slider/Slider";
 
-const items = [{ text: "test1" }, { text: "test2" }, { text: "test3" }];
+const items = [
+  { text: "test1" },
+  { text: "test2" },
+  { text: "test3" },
+  { text: "test4" },
+  { text: "test5" },
+  { text: "test6" },
+  { text: "test7" },
+];
 
 export default function ConsultantsSection() {
-  console.log(Slider);
   return (
     <div>
       <Slider>
@@ -19,7 +26,7 @@ export default function ConsultantsSection() {
           href="/consultants"
           linkText="More..."
         />
-        <Slider.Track>
+        <Slider.Track key={"sliderTrack"}>
           {items.map((item, index) => (
             <Slider.Item key={index} text={item.text} />
           ))}

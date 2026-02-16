@@ -1,6 +1,7 @@
 "use client";
 
 import {
+  Children,
   createContext,
   Dispatch,
   ReactNode,
@@ -14,6 +15,7 @@ interface SliderContext {
   next: () => void;
   prev: () => void;
   currentIndex: number;
+  visibleItems: number;
   setTotalItems: Dispatch<SetStateAction<number>>;
   setVisibleItems: Dispatch<SetStateAction<number>>;
 }
@@ -37,7 +39,14 @@ export default function SliderProvider({ children }: { children: ReactNode }) {
 
   return (
     <SliderContext.Provider
-      value={{ next, prev, setTotalItems, setVisibleItems, currentIndex }}
+      value={{
+        next,
+        prev,
+        setTotalItems,
+        setVisibleItems,
+        currentIndex,
+        visibleItems,
+      }}
     >
       {children}
     </SliderContext.Provider>
