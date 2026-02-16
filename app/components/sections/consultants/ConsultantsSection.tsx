@@ -2,6 +2,7 @@
 
 import { Operator } from "../../icons";
 import Slider from "../../ui/slider/Slider";
+import ConsultantsCard from "./ConsultantsCard";
 
 const items = [
   { text: "test1" },
@@ -28,7 +29,9 @@ export default function ConsultantsSection() {
         />
         <Slider.Track key={"sliderTrack"}>
           {items.map((item, index) => (
-            <Slider.Item key={index} text={item.text} />
+            <Slider.Item key={index}>
+              <ConsultantsCard />
+            </Slider.Item>
           ))}
         </Slider.Track>
       </Slider>

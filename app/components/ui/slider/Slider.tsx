@@ -9,7 +9,7 @@ import SliderItem from "./SliderItem";
 
 function Slider({ children }: { children: ReactNode }) {
   return (
-    <div className=" bg-secondary-default rounded-4xl flex flex-col md:flex-row items-center justify-end py-4 px-8 lg:px-20 ">
+    <div className=" bg-secondary-default rounded-4xl grid grid-cols-1 md:grid-cols-6 py-4 px-8 lg:px-20 ">
       <SliderProvider>{children}</SliderProvider>
     </div>
   );

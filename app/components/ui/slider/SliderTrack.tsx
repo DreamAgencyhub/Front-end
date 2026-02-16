@@ -1,9 +1,8 @@
 "use client";
 
 import { ReactNode, useEffect } from "react";
-import SvgIconIonicIosArrowLeft from "../../icons/IconIonicIosArrowLeft";
-import SvgIconIonicIosArrowRight from "../../icons/IconIonicIosArrowRight";
 import { useSlider } from "./SliderContext";
+import SliderBtn from "./SliderBtn";
 
 export const SliderTrack = ({ children }: { children: ReactNode }) => {
   const {
@@ -41,20 +40,10 @@ export const SliderTrack = ({ children }: { children: ReactNode }) => {
   const translatePercentage = (currentIndex * 100) / visibleItems;
 
   return (
-    <div className=" select-none rounded-4xl  relative w-full bg-default-color px-4 py-10 items-center justify-center ">
-      <div
-        onClick={prev}
-        className=" cursor-pointer shadow-md shadow-gray-400  dark:shadow-[-5px_0px_10px_3px]  dark:shadow-gray-900 z-40  rounded-full bg-secondary-default p-2 absolute -left-4 -translate-y-1/2 top-1/2 "
-      >
-        <SvgIconIonicIosArrowLeft className="fill-primary-500 stroke-0 text-xl" />
-      </div>
-      <div
-        onClick={next}
-        className=" cursor-pointer shadow-md shadow-gray-400  dark:shadow-[5px_0px_10px_3px] dark:shadow-gray-900 z-40  rounded-full bg-secondary-default p-2 absolute -right-4 -translate-y-1/2 top-1/2 "
-      >
-        <SvgIconIonicIosArrowRight className="fill-primary-500 stroke-0 text-xl rotate-180 " />
-      </div>
-      <div className=" relative overflow-hidden h-75 md:h-72  w-full">
+    <div className=" select-none rounded-4xl relative w-full bg-default-color px-4 py-10 md:mx-4  items-center justify-center  md:col-span-5">
+      <SliderBtn type="prev" handleClick={prev} />
+      <SliderBtn type="next" handleClick={next} />
+      <div className=" relative overflow-hidden w-full">
         <div
           className="flex transition-transform duration-500 ease-in-out  "
           style={{

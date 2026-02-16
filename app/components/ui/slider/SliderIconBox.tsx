@@ -17,7 +17,7 @@ export default function SliderIconBox({
   icon,
 }: SliderIconBoxProps) {
   return (
-    <div className="relative flex flex-col  justify-center  items-center lg:justify-end lg:items-start aspect-square h-54 gap-1">
+    <div className="relative flex flex-col place-self-center justify-center  items-center lg:justify-end lg:items-start aspect-square h-54 gap-1">
       {icon}
       <div className="flex flex-col gap-1 justify-center items-start mt-12 ">
         <h4 className="text-2xl font-semibold">{title}</h4>
