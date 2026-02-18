@@ -16,4 +16,5 @@ export { default as Leadership } from "./Leadership";
 export { default as Moon } from "./Moon";
 export { default as OnlineSupport } from "./OnlineSupport";
 export { default as OnlineCourse } from "./OnlineCourse";
+export { default as Operator } from "./Operator";
 export { default as Sun } from "./Sun";

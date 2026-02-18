@@ -1,4 +1,5 @@
 import AboutSection from "./components/sections/about/AboutSection";
+import ConsultantsSection from "./components/sections/consultants/ConsultantsSection";
 import HeroSection from "./components/sections/hero/HeroSection";
 import StatisticsSection from "./components/sections/statistics/StatisticsSection";
 
@@ -8,6 +9,7 @@ export default function page() {
       <HeroSection />
       <StatisticsSection />
       <AboutSection />
+      <ConsultantsSection />
     </div>
   );
 }
