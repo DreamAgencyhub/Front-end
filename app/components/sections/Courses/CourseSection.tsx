@@ -15,7 +15,7 @@ const items = [
 
 export default function CourseSection() {
   return (
-    <div className="mt-20">
+    <div className="mt-16">
       <Slider>
         <Slider.IconBox
           icon={
