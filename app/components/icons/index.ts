@@ -2,6 +2,7 @@ export { default as Analytics } from "./Analytics";
 export { default as BurgerMenuSvgrepoCom } from "./BurgerMenuSvgrepoCom";
 export { default as Clarification } from "./Clarification";
 export { default as CloseXSvgrepoCom } from "./CloseXSvgrepoCom";
+export { default as Crown } from "./Crown";
 export { default as Discussion } from "./Discussion";
 export { default as ELearning } from "./ELearning";
 export { default as Group } from "./Group";
