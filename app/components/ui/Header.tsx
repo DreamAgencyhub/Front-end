@@ -21,7 +21,7 @@ export default function Header() {
           <Logo />
           <ThemeMode className="lg:order-3 place-self-center " />
           <Button
-            className={"lg:order-last"}
+            className={"lg:order-last font-semibold text-sm"}
             directTo="/auth/login"
             variant="primary"
             size="medium"

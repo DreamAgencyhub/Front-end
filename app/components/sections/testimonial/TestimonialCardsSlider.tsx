@@ -38,7 +38,7 @@ export default function TestimonialSlider({ data }: Props) {
   };
 
   return (
-    <div className="relative w-[340px] h-[420px] mx-auto">
+    <div className="relative w-85 h-103 mx-auto">
       <div
         className="absolute inset-0 z-10 rounded-4xl shadow-md overflow-hidden"
         style={{

@@ -5,7 +5,7 @@ import Button from "../../ui/Button";
 
 export default function CourseCard() {
   return (
-    <div className=" relative bg-transparent w-full h-full rounded-4xl overflow-hidden  ">
+    <div className=" relative bg-transparent w-60 h-full shrink-0 rounded-4xl overflow-hidden  ">
       <div className="bg-default-color rounded-3xl aspect-square z-30 w-42 absolute top-1 left-1/2 -translate-x-1/2  flex items-center justify-center  ">
         <div className="rounded-3xl w-36 h-36  overflow-hidden shadow-lg ">
           <Image
