@@ -3,6 +3,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import TestimonialCard from "./TestimonialCard";
+import Button from "../../ui/Button";
 
 export type Testimonial = {
   id: number;
@@ -39,7 +40,7 @@ export default function TestimonialSlider({ data }: Props) {
   return (
     <div className="relative w-[340px] h-[420px] mx-auto">
       <div
-        className="absolute inset-0 z-10 rounded-3xl shadow-md overflow-hidden"
+        className="absolute inset-0 z-10 rounded-4xl shadow-md overflow-hidden"
         style={{
           transform: "translate(-16px, -14px) rotate(-6deg) scale(0.94)",
         }}
@@ -62,25 +63,29 @@ export default function TestimonialSlider({ data }: Props) {
             opacity: 0,
             transition: { duration: 0.5, ease: "easeInOut" },
           }}
-          className="absolute inset-0 z-20 rounded-3xl  shadow-xl overflow-hidden"
+          className="absolute inset-0 z-20 rounded-4xl  shadow-xl overflow-hidden"
         >
           <TestimonialCard data={data[index]} />
         </motion.div>
       </AnimatePresence>
 
       <div className="absolute -bottom-14 left-1/2 -translate-x-1/2 flex gap-4">
-        <button
+        <Button
+          variant="secondary"
+          size="small"
           onClick={() => handlePrev()}
-          className="px-4 py-2 rounded-full bg-gray-200 hover:bg-gray-300 transition"
+          className="font-semibold"
         >
           Prev
-        </button>
-        <button
+        </Button>
+        <Button
+          variant="primary"
+          size="small"
           onClick={() => handleNext()}
-          className="px-4 py-2 rounded-full bg-gray-800 text-white hover:bg-black transition"
+          className=" shadow-none font-semibold "
         >
           Next
-        </button>
+        </Button>
       </div>
     </div>
   );

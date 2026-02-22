@@ -8,6 +8,7 @@ interface Button {
   isDisabled?: boolean;
   directTo?: string;
   className?: string;
+  onClick?: () => void;
 }
 
 const sizes = {
@@ -19,7 +20,7 @@ const sizes = {
 const variants = {
   variantPrimary: ` bg-primary-500 hover:bg-primary-600 transition-all hover:shadow-none shadow-[0px_0px_8px_5px] shadow-primary-100 dark:shadow-primary-900 `,
 
-  variantSecondary: `bg-transparent border-2 border-primary-500  hover:bg-primary-500  hover:text-secondary-default hover:dark:text-text-default transition-all `,
+  variantSecondary: `bg-transparent border-2 border-primary-500 text-primary-500 dark:text-gray-50  hover:bg-primary-500/40  hover:text-secondary-default hover:dark:text-text-default transition-all `,
 };
 
 export default function Button({
@@ -29,6 +30,7 @@ export default function Button({
   size,
   directTo,
   className,
+  onClick,
 }: Button) {
   const sizeStyle =
     size === "small"
@@ -55,8 +57,9 @@ export default function Button({
 
   return (
     <button
+      onClick={onClick}
       disabled={isDisabled}
-      className={`${className} ${sizeStyle} ${variantStyle} cursor-pointer text-nowrap text-gray-50 text-center ring-0 `}
+      className={`${className} ${sizeStyle} ${variantStyle} cursor-pointer text-nowrap text-gray-50 text-center ring-0 rounded-xl `}
     >
       {children}
     </button>
