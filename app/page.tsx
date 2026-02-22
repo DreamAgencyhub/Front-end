@@ -3,6 +3,7 @@ import ConsultantsSection from "./components/sections/consultants/ConsultantsSec
 import CourseSection from "./components/sections/Courses/CourseSection";
 import HeroSection from "./components/sections/hero/HeroSection";
 import StatisticsSection from "./components/sections/statistics/StatisticsSection";
+import TestimonialSection from "./components/sections/testimonial/TestimonialSection";
 
 export default function page() {
   return (
@@ -12,6 +13,7 @@ export default function page() {
       <AboutSection />
       <ConsultantsSection />
       <CourseSection />
+      <TestimonialSection />
     </div>
   );
 }
