@@ -30,7 +30,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" data-theme="light">
+    <html lang="en" data-theme="light" className="scroll-smooth">
       <body
         className={`${manrope.variable} ${spaceGrotesk.variable} font-sans bg-default-color  text-text-default`}
       >

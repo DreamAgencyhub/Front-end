@@ -1,13 +1,14 @@
 import Image from "next/image";
 import heroImage from "@/public/assets/images/HeroImage.png";
-import { HeroSectionWave } from "@/app/components/icons";
 import InfoWidget from "./InfoWidget";
 import { infoWidgetsData } from "./heroSectoinData";
+import Button from "../../ui/Button";
+import SvgIconAwesomeArrowDown from "../../icons/IconAwesomeArrowDown";
 
 export default function HeroSection() {
   return (
     <div className="col-span-1">
-      <div className="grid grid-cols-1 pt-8 md:grid-cols-2">
+      <div className=" relative grid grid-cols-1 pt-8 md:grid-cols-2">
         <div className="">
           <h1 className=" text-4xl/13  [font-family:var(--font-space-grotesk)] md:text-5xl/16 xl:text-6xl font-black text-primary-500">
             Build Your Dream Business with Us!
@@ -31,15 +32,20 @@ export default function HeroSection() {
             alt="a-successful-businessman"
           />
         </div>
-        <div className="col-span-full h-screen md:h-[60vh] lg:h-auto xl:h-[55vh]">
-          <HeroSectionWave className="absolute  -z-10 -left-2 -right-2 lg:-right-4 lg:-left-4 scale-250 md:scale-100   " />
-          <div className=" grid place-items-center md:place-items-end md:grid-cols-5 md:grid-rows-2 lg:grid-rows-1  justify-center absolute lg:relative lg:left-auto lg:right-auto left-0 right-0  gap-8 lg:gap-0  2xl:mt-48  my-14  bg-primary-500 md:mt-24 pb-8 xl:mt-38 lg:bg-transparent  ">
-            <InfoWidget
-              className="col-span-1 md:col-span-2 lg:col-span-1 "
-              data={infoWidgetsData}
-            />
-          </div>
-        </div>
+        <Button
+          directTo="#statistics"
+          variant="primary"
+          size="medium"
+          className="rounded-full!  p-3! absolute bottom-0 -translate-x-1/2 left-1/2"
+        >
+          <SvgIconAwesomeArrowDown />
+        </Button>
+      </div>
+      <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5  gap-6 place-items-center  mt-8">
+        <InfoWidget
+          className="col-span-1  md:last:hidden lg:last:flex lg:col-span-1  last:col-span-2 lg:last:col-span-1 "
+          data={infoWidgetsData}
+        />
       </div>
     </div>
   );

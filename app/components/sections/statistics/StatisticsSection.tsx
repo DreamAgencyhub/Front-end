@@ -5,7 +5,10 @@ import StatisticsInfoWidgets from "./StatisticsInfoWidgets";
 
 export default function StatisticsSection() {
   return (
-    <div className="col-span-1 grid grid-cols-1 py-8 gap-6 md:items-center  md:grid-cols-2 mt-20 md:mt-auto">
+    <div
+      id="statistics"
+      className="col-span-1 grid grid-cols-1 py-8 gap-6 md:items-center  md:grid-cols-2 mt-20 md:mt-auto"
+    >
       <div className="place-self-center">
         <IconBox
           text="We are Proud of our statistics & figures."
