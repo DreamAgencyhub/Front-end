@@ -1,11 +1,86 @@
+"use client";
+
+import { motion, AnimatePresence } from "framer-motion";
+import { useState } from "react";
 import TestimonialCard from "./TestimonialCard";
 
-export default function TestimonialCardsSlider() {
+export type Testimonial = {
+  id: number;
+  avatar?: string;
+  name: string;
+  role: string;
+  content: string;
+};
+
+interface Props {
+  data: Testimonial[];
+}
+
+type Direction = "next" | "prev";
+
+export default function TestimonialSlider({ data }: Props) {
+  const [index, setIndex] = useState(0);
+  const [direction, setDirection] = useState<Direction>("next");
+
+  const total = data.length;
+  const nextIndex = (index + 1) % total;
+  const prevIndex = (index - 1 + total) % total;
+
+  const handleNext = () => {
+    setDirection("next");
+    setIndex(nextIndex);
+  };
+
+  const handlePrev = () => {
+    setDirection("prev");
+    setIndex(prevIndex);
+  };
+
   return (
-    <div className="flex items-center justify-center">
-      <div className="relative">
-        <TestimonialCard />
-        <div className="bg-secondary-default  w-80 h-90 lg:w-100 lg:h-112  rounded-4xl absolute top-0 -left-4 lg:-left-6 z-0 -rotate-10"></div>
+    <div className="relative w-[340px] h-[420px] mx-auto">
+      <div
+        className="absolute inset-0 z-10 rounded-3xl shadow-md overflow-hidden"
+        style={{
+          transform: "translate(-16px, -14px) rotate(-6deg) scale(0.94)",
+        }}
+      >
+        <TestimonialCard
+          data={data[nextIndex === 0 ? data.length - 1 : nextIndex - 1]}
+        />
+      </div>
+
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={index}
+          initial={{ x: 0, rotate: 0, scale: 1 }}
+          animate={{ x: 0, rotate: 0, scale: 1 }}
+          exit={{
+            x: direction === "prev" ? -100 : 100,
+            rotate: direction === "prev" ? -12 : 12,
+            scale: 0.92,
+            y: 40,
+            opacity: 0,
+            transition: { duration: 0.5, ease: "easeInOut" },
+          }}
+          className="absolute inset-0 z-20 rounded-3xl  shadow-xl overflow-hidden"
+        >
+          <TestimonialCard data={data[index]} />
+        </motion.div>
+      </AnimatePresence>
+
+      <div className="absolute -bottom-14 left-1/2 -translate-x-1/2 flex gap-4">
+        <button
+          onClick={() => handlePrev()}
+          className="px-4 py-2 rounded-full bg-gray-200 hover:bg-gray-300 transition"
+        >
+          Prev
+        </button>
+        <button
+          onClick={() => handleNext()}
+          className="px-4 py-2 rounded-full bg-gray-800 text-white hover:bg-black transition"
+        >
+          Next
+        </button>
       </div>
     </div>
   );
