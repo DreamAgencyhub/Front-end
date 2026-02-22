@@ -31,7 +31,7 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <div className=" border-t border-primary-500 p-4 flex flex-col md:flex-row gap-4 items-center justify-around">
+      <div className="text-sm font-semibold border-t border-primary-500 p-4 flex flex-col md:flex-row gap-3 items-center justify-around">
         <p className="flex flex-row items-center gap-1">
           Designed and developed by{" "}
           <Link
@@ -46,7 +46,7 @@ export default function Footer() {
         </p>
         <p>
           <span className="text-primary-500 font-bold ">&copy;</span> All rights
-          reserved
+          reserved 2026 - 2027
         </p>
       </div>
     </div>
