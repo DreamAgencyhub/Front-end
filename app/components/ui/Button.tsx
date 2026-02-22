@@ -20,7 +20,7 @@ const sizes = {
 const variants = {
   variantPrimary: ` bg-primary-500 hover:bg-primary-600 transition-all hover:shadow-none shadow-[0px_0px_8px_5px] shadow-primary-100 dark:shadow-primary-900 `,
 
-  variantSecondary: `bg-transparent border-2 border-primary-500 text-primary-500 dark:text-gray-50  hover:bg-primary-500/40  hover:text-secondary-default hover:dark:text-text-default transition-all `,
+  variantSecondary: `bg-transparent border-2 border-primary-500 text-primary-500 dark:text-gray-50  hover:bg-primary-500/15   hover:dark:text-text-default transition-all `,
 };
 
 export default function Button({
