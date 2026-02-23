@@ -1,3 +1,4 @@
+import Search from "@/app/components/ui/Search";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -6,5 +7,9 @@ export const metadata: Metadata = {
 };
 
 export default function page() {
-  return <div>Course Page </div>;
+  return (
+    <div className="pt-30">
+      <Search />
+    </div>
+  );
 }
