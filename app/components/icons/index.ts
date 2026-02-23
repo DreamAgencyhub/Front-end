@@ -10,6 +10,7 @@ export { default as GroupFill } from "./GroupFill";
 export { default as HeroSectionWave } from "./HeroSectionWave";
 export { default as IconAwesomeArrowDown } from "./IconAwesomeArrowDown";
 export { default as IconAwesomeInstagram } from "./IconAwesomeInstagram";
+export { default as IconAwesomeSortAmountUp } from "./IconAwesomeSortAmountUp";
 export { default as IconAwesomeTelegramPlane } from "./IconAwesomeTelegramPlane";
 export { default as IconIonicIosArrowLeft } from "./IconIonicIosArrowLeft";
 export { default as IconIonicIosArrowRight } from "./IconIonicIosArrowRight";
