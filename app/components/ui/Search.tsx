@@ -9,7 +9,7 @@ export default function Search() {
       <input
         type="text"
         placeholder="Search..."
-        className="text-text-muted font-semibold px-2 focus:outline-none text-sm h-full"
+        className="text-text-default font-semibold px-2 focus:outline-none text-sm h-full"
       />
     </form>
   );

@@ -1,3 +1,4 @@
+import Filter from "@/app/components/ui/Filter";
 import Search from "@/app/components/ui/Search";
 import { Metadata } from "next";
 
@@ -8,8 +9,9 @@ export const metadata: Metadata = {
 
 export default function page() {
   return (
-    <div className="pt-30">
+    <div className="pt-30 flex flex-col gap-10">
       <Search />
+      <Filter />
     </div>
   );
 }
