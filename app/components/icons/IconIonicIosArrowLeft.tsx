@@ -11,11 +11,9 @@ const SvgIconIonicIosArrowLeft = (props: SVGProps<SVGSVGElement>) => (
     {...props}
   >
     <path
-      d="m14.358 15.205 6.821-6.816a1.288 1.288 0 1 0-1.825-1.819l-7.728 7.723a1.286 1.286 0 0 0-.038 1.776l7.76 7.776a1.288 1.288 0 0 0 1.825-1.819Z"
-      style={{
-        fill: "#7757ff",
-      }}
-      transform="translate(-11.251 -6.194)"
+      d="m3.107 9.011 6.821-6.816A1.288 1.288 0 1 0 8.103.376L.375 8.099a1.286 1.286 0 0 0-.038 1.776l7.76 7.776a1.288 1.288 0 0 0 1.825-1.819Z"
+      className="Icon_ionic-ios-arrow-left_svg__cls-1"
+      data-name="Icon ionic-ios-arrow-back"
     />
   </svg>
 );
