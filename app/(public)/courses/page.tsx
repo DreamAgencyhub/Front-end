@@ -1,6 +1,4 @@
-import Filter from "@/app/components/ui/Filter";
-import Pagination from "@/app/components/ui/Pagination";
-import Search from "@/app/components/ui/Search";
+import CourseCard from "@/app/components/sections/Courses/CourseCard";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -8,12 +6,26 @@ export const metadata: Metadata = {
   description: "",
 };
 
+const items = [
+  { text: "test1" },
+  { text: "test2" },
+  { text: "test3" },
+  { text: "test4" },
+  { text: "test5" },
+  { text: "test6" },
+];
+
 export default function page() {
   return (
-    <div className="pt-30 flex flex-col gap-10">
-      <Search />
-      <Filter />
-      <Pagination />
+    <div className="py-10 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+      {items.map((item) => (
+        <div
+          className="w-76 h-90 flex items-center justify-center"
+          key={item.text}
+        >
+          <CourseCard key={item.text} />
+        </div>
+      ))}
     </div>
   );
 }
