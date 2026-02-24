@@ -23,7 +23,7 @@ export default function Filter() {
         className={`flex w-full items-center justify-around px-2 py-3 `}
       >
         <IconAwesomeSortAmountUp className="text-xl fill-gray-400 dark:fill-gray-300  stroke-0 " />
-        <div className="flex flex-row justify-between text-sm font-semibold text-text-default w-full px-2  cursor-pointer">
+        <div className="flex flex-row justify-between items-center text-sm font-semibold text-text-default w-full px-2  cursor-pointer">
           <span>Sort by</span>
           <IconIonicIosArrowLeft
             className={`fill-text-default! stroke-text-default transition-all duration-300 ease-in-out ${
