@@ -15,6 +15,8 @@ const sizes = {
   smallSize: `text-xs px-3 py-2 rounded-lg `,
 
   mediumSize: ` text-based px-4 py-3 `,
+
+  largeSize: `text-based px-6 py-3 rounded-2xl`,
 };
 
 const variants = {
@@ -37,7 +39,7 @@ export default function Button({
       ? `${sizes?.smallSize} `
       : size === "medium"
       ? sizes?.mediumSize
-      : "";
+      : sizes?.largeSize;
   const variantStyle =
     variant === "primary"
       ? variants?.variantPrimary
@@ -59,7 +61,7 @@ export default function Button({
     <button
       onClick={onClick}
       disabled={isDisabled}
-      className={`${className} ${sizeStyle} ${variantStyle} cursor-pointer text-nowrap text-gray-50 text-center ring-0 rounded-xl `}
+      className={`${className} ${sizeStyle} ${variantStyle} cursor-pointer text-nowrap text-gray-50 text-center ring-0 `}
     >
       {children}
     </button>
