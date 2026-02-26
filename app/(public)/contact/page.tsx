@@ -5,6 +5,8 @@ import {
   IconMaterialLocationOn,
 } from "@/app/components/icons";
 import Button from "@/app/components/ui/Button";
+import Input from "@/app/components/ui/Input";
+import Textarea from "@/app/components/ui/Textarea";
 import { Metadata } from "next";
 import Link from "next/link";
 
@@ -83,20 +85,19 @@ export default function page() {
           Send Us a Message
         </h3>
         <form className="w-full h-full flex flex-col gap-4 pb-6" action="">
-          <input
+          <Input
+            required
+            name="fullName"
             placeholder="Full Name ..."
-            className="bg-default-color py-3 px-4 rounded-2xl focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 transition duration-200 focus:shadow-xl shadow-primary-100/50 "
             type="text"
           />
-          <input
+          <Input
+            required
+            name="email"
             placeholder="Your Email Address ..."
-            className="bg-default-color py-3 px-4 rounded-2xl focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 transition duration-200 focus:shadow-xl shadow-primary-100/50 "
-            type="text"
+            type="email"
           />
-          <textarea
-            placeholder="Your Message..."
-            className="bg-default-color py-3 px-4 rounded-2xl focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 transition duration-200 focus:shadow-xl shadow-primary-100/50 h-34 "
-          />
+          <Textarea placeholder="Your Message..." />
 
           <Button className="mt-8" variant="primary" size="large">
             Submit
