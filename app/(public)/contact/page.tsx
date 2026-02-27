@@ -4,9 +4,7 @@ import {
   IconMaterialEmail,
   IconMaterialLocationOn,
 } from "@/app/components/icons";
-import Button from "@/app/components/ui/Button";
-import Input from "@/app/components/ui/Input";
-import Textarea from "@/app/components/ui/Textarea";
+import ContactForm from "@/app/components/ui/ContactForm";
 import { Metadata } from "next";
 import Link from "next/link";
 
@@ -80,30 +78,7 @@ export default function page() {
         </div>
       </div>
 
-      <div className="  md:absolute md:w-92 md:right-0 lg:left-1/2  lg:-translate-x-1/5 md:top-1/2 md:-translate-y-1/2 bg-secondary-default flex flex-col py-4 px-6 gap-4 rounded-4xl">
-        <h3 className="text-base mt-4 font-semibold py-2 border-b-2 border-gray-300">
-          Send Us a Message
-        </h3>
-        <form className="w-full h-full flex flex-col gap-4 pb-6" action="">
-          <Input
-            required
-            name="fullName"
-            placeholder="Full Name ..."
-            type="text"
-          />
-          <Input
-            required
-            name="email"
-            placeholder="Your Email Address ..."
-            type="email"
-          />
-          <Textarea placeholder="Your Message..." />
-
-          <Button className="mt-8" variant="primary" size="large">
-            Submit
-          </Button>
-        </form>
-      </div>
+      <ContactForm />
     </div>
   );
 }
