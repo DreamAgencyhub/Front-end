@@ -11,11 +11,8 @@ const SvgIconMaterialEmail = (props: SVGProps<SVGSVGElement>) => (
     {...props}
   >
     <path
-      d="M30 6H6a3 3 0 0 0-2.985 3L3 27a3.01 3.01 0 0 0 3 3h24a3.01 3.01 0 0 0 3-3V9a3.01 3.01 0 0 0-3-3m0 6-12 7.5L6 12V9l12 7.5L30 9Z"
-      style={{
-        fill: "#7757ff",
-      }}
-      transform="translate(-3 -6)"
+      d="M27 0H3A3 3 0 0 0 .015 3L0 21a3.01 3.01 0 0 0 3 3h24a3.01 3.01 0 0 0 3-3V3a3.01 3.01 0 0 0-3-3m0 6-12 7.5L3 6V3l12 7.5L27 3Z"
+      className="Icon_material-email_svg__a"
     />
   </svg>
 );
