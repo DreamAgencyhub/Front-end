@@ -34,11 +34,9 @@ export default function RootLayout({
       <body
         className={`${manrope.variable} ${spaceGrotesk.variable} font-sans bg-default-color  text-text-default`}
       >
-        <div className="relative overflow-x-hidden">
-          <Header />
-          <main className="max-w-7xl px-4 mx-auto ">{children}</main>
-          <Footer />
-        </div>
+        <Header />
+        <main className="max-w-7xl px-4 mx-auto ">{children}</main>
+        <Footer />
       </body>
     </html>
   );

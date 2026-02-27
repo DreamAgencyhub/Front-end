@@ -20,6 +20,8 @@ export { default as IconMaterialEmail } from "./IconMaterialEmail";
 export { default as IconMaterialLocationOn } from "./IconMaterialLocationOn";
 export { default as IconMetroSearch } from "./IconMetroSearch";
 export { default as IconOpenMicrophone } from "./IconOpenMicrophone";
+export { default as Icons8Apple } from "./Icons8Apple";
+export { default as Icons8Google } from "./Icons8Google";
 export { default as IdeaBusiness } from "./IdeaBusiness";
 export { default as Increase } from "./Increase";
 export { default as Leadership } from "./Leadership";
