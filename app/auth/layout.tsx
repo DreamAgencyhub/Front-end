@@ -1,6 +1,4 @@
 import { ReactNode } from "react";
-import { CloseXSvgrepoCom } from "@/app/components/icons";
-import Link from "next/link";
 import Logo from "@/app/components/ui/Logo";
 import authPagePic from "@/public/assets/images/authPagePic.jpg";
 import Image from "next/image";
@@ -14,7 +12,7 @@ export default function Layout({ children }: { children: ReactNode }) {
       <div className="w-full md:w-1/2 lg:w-2/4 flex justify-center items-center h-full">
         {children}
       </div>
-      <div className="relative rounded-l-[50px] overflow-hidden w-full h-full">
+      <div className=" hidden lg:block relative rounded-l-[50px] overflow-hidden w-full h-full">
         <Image
           className="object-cover"
           fill

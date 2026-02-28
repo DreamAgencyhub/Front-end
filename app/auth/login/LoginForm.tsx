@@ -3,7 +3,6 @@
 import { Icons8Apple, Icons8Google } from "@/app/components/icons";
 import Button from "@/app/components/ui/Button";
 import Input from "@/app/components/ui/Input";
-import { isPasswordValidate } from "@/app/utilities/helpers";
 import Link from "next/link";
 import { useForm } from "react-hook-form";
 
