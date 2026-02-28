@@ -7,7 +7,7 @@ import { isPasswordValidate } from "@/app/utilities/helpers";
 import Link from "next/link";
 import { useForm } from "react-hook-form";
 
-export default function SignupForm() {
+export default function LoginForm() {
   const {
     register,
     formState: { errors },
@@ -25,9 +25,9 @@ export default function SignupForm() {
   return (
     <div className="flex flex-col justify-center  items-center md:items-stretch md:w-98  py-10 gap-6 col-span-1">
       <div className="py-3 text-center">
-        <h3 className="text-3xl pb-2 ">Create an account</h3>
+        <h3 className="text-3xl pb-2 ">Sign in to your account</h3>
         <span className="text-sm  text-text-muted font-semibold">
-          Welcome to Dream Agency
+          Welcome back to Dream Agency
         </span>
       </div>
 
@@ -36,24 +36,6 @@ export default function SignupForm() {
         onSubmit={handleSubmit(onSubmit)}
         action=""
       >
-        <Input
-          name="fullName"
-          label="Full Name"
-          type="text"
-          register={register("fullName", {
-            required: "*This field is required.",
-            minLength: {
-              value: 3,
-              message: "*Full name should be at least 3 characters.",
-            },
-            maxLength: {
-              value: 20,
-              message: "Full name should not be more that 20 characters.",
-            },
-          })}
-          errors={errors}
-          className="bg-secondary-default"
-        />
         <Input
           name="email"
           label="Email"
@@ -79,14 +61,13 @@ export default function SignupForm() {
           label="Password"
           register={register("password", {
             required: "*This field is required.",
-            validate: (value) => isPasswordValidate(value),
           })}
           errors={errors}
           className="bg-secondary-default"
         />
 
         <Button variant="primary" size="large" className="font-semibold mt-6">
-          Sign up
+          Sign in
         </Button>
         <div className="py-2 flex gap-2">
           <Button
@@ -110,12 +91,12 @@ export default function SignupForm() {
         </div>
       </form>
       <span className="text-text-muted text-center">
-        Have any account?{" "}
+        Don&apos;t Have any account?{" "}
         <Link
           className="underline font-semibold text-text-default hover:text-text-muted "
-          href={"/auth/login"}
+          href={"/auth/signup"}
         >
-          Sign in
+          Sign up
         </Link>
       </span>
     </div>
