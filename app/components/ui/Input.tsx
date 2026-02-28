@@ -5,6 +5,8 @@ import {
   FieldValues,
   UseFormRegisterReturn,
 } from "react-hook-form";
+import { ClosedEye, OpenEye } from "../icons";
+import { useState } from "react";
 
 interface InputProps {
   placeholder?: string;
@@ -25,6 +27,10 @@ export default function Input({
   errors,
   label,
 }: InputProps) {
+  const [isPasswordVisible, setIsPasswordVisible] = useState<boolean>(false);
+
+  const toggleShowPassword = () => setIsPasswordVisible((prev) => !prev);
+
   const errorMessage = errors ? errors[name]?.message : "";
 
   return (
@@ -44,8 +50,20 @@ export default function Input({
         placeholder={placeholder}
         name={name}
         className={` ${className} w-full bg-default-color py-3 px-4 rounded-2xl focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 transition duration-200 focus:shadow-xl shadow-primary-100/50 dark:shadow-primary-900/50 dark:ring-offset-primary-400 mt-1`}
-        type={type}
+        type={name === "password" && isPasswordVisible ? "text" : type}
       />
+      {name === "password" && (
+        <div
+          onClick={toggleShowPassword}
+          className="absolute right-4 top-2/3  -translate-y-1/2 cursor-pointer select-none "
+        >
+          {!isPasswordVisible ? (
+            <ClosedEye className="text-xl fill-primary-500 stroke-primary-500 " />
+          ) : (
+            <OpenEye className="text-xl fill-primary-500 stroke-primary-500 " />
+          )}
+        </div>
+      )}
     </div>
   );
 }
