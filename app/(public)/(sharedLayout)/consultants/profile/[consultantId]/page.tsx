@@ -1,4 +1,5 @@
 import ConsultantInfoCard from "../ConsultantInfoCard";
+import Reservation from "../Reservation";
 import VideoBox from "../VideoBox";
 
 interface PageProps {
@@ -12,6 +13,7 @@ export default function page({ params }: PageProps) {
     <div className="flex flex-col items-center gap-8 py-8">
       <ConsultantInfoCard />
       <VideoBox />
+      <Reservation />
     </div>
   );
 }

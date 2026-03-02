@@ -19,6 +19,7 @@ export { default as IconIonicIosArrowRight } from "./IconIonicIosArrowRight";
 export { default as IconIonicIosTimer } from "./IconIonicIosTimer";
 export { default as IconMaterialEmail } from "./IconMaterialEmail";
 export { default as IconMaterialLocationOn } from "./IconMaterialLocationOn";
+export { default as IconMetroCalendar } from "./IconMetroCalendar";
 export { default as IconMetroSearch } from "./IconMetroSearch";
 export { default as IconOpenMicrophone } from "./IconOpenMicrophone";
 export { default as Icons8Apple } from "./Icons8Apple";
