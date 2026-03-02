@@ -14,7 +14,7 @@ interface Button {
 const sizes = {
   smallSize: `text-xs px-3 py-2 rounded-lg `,
 
-  mediumSize: ` text-based px-4 py-3 `,
+  mediumSize: ` text-based px-4 py-3 rounded-2xl `,
 
   largeSize: `text-based px-6 py-3 rounded-2xl`,
 };

@@ -26,7 +26,7 @@ export default function Reservation() {
           </Button>
         </div>
       </div>
-      <div className="grid grid-cols-1 gap-4 lg:max-w-4xl md:grid-cols-3 lg:grid-cols-4 mt-4">
+      <div className="grid grid-cols-2 gap-4 lg:max-w-4xl md:grid-cols-3 lg:grid-cols-4 mt-4">
         <div className="rounded-2xl bg-primary-500 cursor-pointer hover:bg-primary-700 transition-colors ease-in-out duration-300 py-4 text-gray-100 text-sm font-semibold text-center">
           <span>Saturday: 3/4/2026</span>
         </div>

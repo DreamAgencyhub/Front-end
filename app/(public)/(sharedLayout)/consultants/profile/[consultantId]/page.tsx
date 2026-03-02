@@ -1,3 +1,4 @@
+import CommentsSection from "../CommentsSection";
 import ConsultantInfoCard from "../ConsultantInfoCard";
 import Reservation from "../Reservation";
 import VideoBox from "../VideoBox";
@@ -14,6 +15,7 @@ export default function page({ params }: PageProps) {
       <ConsultantInfoCard />
       <VideoBox />
       <Reservation />
+      <CommentsSection />
     </div>
   );
 }
