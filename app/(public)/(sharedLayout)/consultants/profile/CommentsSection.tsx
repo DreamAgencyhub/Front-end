@@ -1,6 +1,7 @@
 import { IconAwesomeComments } from "@/app/components/icons";
 import Button from "@/app/components/ui/Button";
 import Comment from "@/app/components/ui/Comment";
+import Pagination from "@/app/components/ui/Pagination";
 
 const comments = [
   {
@@ -62,6 +63,10 @@ export default function CommentsSection() {
         {comments.map((comment) => (
           <Comment key={comment.id} comment={comment} />
         ))}
+      </div>
+
+      <div className="flex w-full items-center justify-center py-4 mt-20">
+        <Pagination />
       </div>
     </div>
   );
