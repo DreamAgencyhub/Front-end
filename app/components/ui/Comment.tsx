@@ -73,7 +73,9 @@ export default function Comment({ comment }: CommentProps) {
             </span>{" "}
             <button
               onClick={toggleShowReplies}
-              className="text-sm font-semibold cursor-pointer hover:text-text-muted"
+              className={`text-sm font-semibold cursor-pointer hover:text-text-muted ${
+                !showReplies ? "text-text-default" : "text-text-muted"
+              } `}
             >
               Replies
             </button>
