@@ -32,7 +32,7 @@ export default function RootLayout({
   return (
     <html lang="en" data-theme="light" className="scroll-smooth">
       <body
-        className={`${manrope.variable} ${spaceGrotesk.variable} font-sans bg-default-color  text-text-default`}
+        className={`${manrope.variable} ${spaceGrotesk.variable} font-sans bg-default-color  text-text-default `}
       >
         <Header />
         <main className="max-w-7xl px-4 mx-auto ">{children}</main>

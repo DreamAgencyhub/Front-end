@@ -1,3 +1,4 @@
+import ModalProvider from "@/app/components/ui/modal/ModalContext";
 import CommentsSection from "../CommentsSection";
 import ConsultantInfoCard from "../ConsultantInfoCard";
 import Reservation from "../Reservation";
@@ -11,11 +12,13 @@ interface PageProps {
 
 export default function page({ params }: PageProps) {
   return (
-    <div className="flex flex-col items-center gap-8 py-8 md:p-8">
-      <ConsultantInfoCard />
-      <VideoBox />
-      <Reservation />
-      <CommentsSection />
-    </div>
+    <ModalProvider>
+      <div className="flex flex-col items-center gap-8 py-8 md:p-8">
+        <ConsultantInfoCard />
+        <VideoBox />
+        <Reservation />
+        <CommentsSection />
+      </div>
+    </ModalProvider>
   );
 }
