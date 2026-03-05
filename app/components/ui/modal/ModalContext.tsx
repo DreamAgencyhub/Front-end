@@ -10,22 +10,22 @@ import {
 } from "react";
 
 interface ModalContext {
-  isOpen: boolean;
-  onOpen: Dispatch<SetStateAction<void>>;
-  onClose: Dispatch<SetStateAction<void>>;
+  openName: string;
+  open: (modalName: string) => void;
+  close: Dispatch<SetStateAction<void>>;
 }
 
 const ModalContext = createContext<ModalContext | null>(null);
 
 export default function ModalProvider({ children }: { children: ReactNode }) {
-  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [openName, setOpenName] = useState<string>("");
 
-  const onOpen = () => setIsOpen(true);
+  const open = setOpenName;
 
-  const onClose = () => setIsOpen(false);
+  const close = () => setOpenName("");
 
   return (
-    <ModalContext.Provider value={{ isOpen, onOpen, onClose }}>
+    <ModalContext.Provider value={{ openName, open, close }}>
       {children}
     </ModalContext.Provider>
   );
