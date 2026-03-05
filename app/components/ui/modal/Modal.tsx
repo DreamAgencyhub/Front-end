@@ -1,3 +1,5 @@
+"use client";
+
 import { ReactNode } from "react";
 import ModalHeader from "./ModalHeader";
 import ModalBody from "./ModalBody";

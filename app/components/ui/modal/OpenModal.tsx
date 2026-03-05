@@ -1,3 +1,4 @@
+"use client";
 import { cloneElement, HTMLAttributes, ReactElement } from "react";
 import { useModal } from "./ModalContext";
 
