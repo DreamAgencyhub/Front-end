@@ -230,7 +230,7 @@ export default function Reservation() {
                           className={`${
                             !item.reserved
                               ? "bg-default-color cursor-pointer hover:shadow-md"
-                              : "bg-accent-500 text-gray-50 cursor-not-allowed shadow-md shadow-accent-300/80"
+                              : "bg-accent-500 text-gray-50 cursor-not-allowed shadow-md shadow-accent-300/80 dark:shadow-rose-900/50"
                           } py-4 px-2  rounded-xl text-sm  text-center   transition-all ease-in-out font-semibold`}
                         >
                           {" "}
