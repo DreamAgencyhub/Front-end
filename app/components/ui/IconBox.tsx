@@ -5,6 +5,7 @@ type IconBoxProps = {
   text?: string;
   icon?: ReactNode;
   className?: string;
+  boxStyle?: string;
 };
 
 export default function IconBox({
@@ -12,11 +13,14 @@ export default function IconBox({
   title,
   icon,
   className,
+  boxStyle,
 }: IconBoxProps) {
   return (
-    <div className={` ${className} flex flex-col`}>
+    <div className={` ${className} flex flex-col text-sm lg:text-base`}>
       <div className="flex flex-row gap-5 items-center ">
-        <div className="bg-primary-500 text-gray-50 rounded-3xl p-3 w-18 lg:w-24 lg:rounded-4xl lg:text-5xl aspect-square flex justify-center items-center shadow-[0px_0px_20px_5px] shadow-primary-200 dark:shadow-primary-900 text-4xl">
+        <div
+          className={` ${boxStyle} bg-primary-500 text-gray-50 rounded-3xl p-3 w-18 lg:w-24 lg:rounded-4xl lg:text-5xl aspect-square flex justify-center items-center shadow-[0px_0px_20px_5px] shadow-primary-200 dark:shadow-primary-900 text-4xl`}
+        >
           {icon}
         </div>
         {title && (
@@ -27,11 +31,7 @@ export default function IconBox({
           </div>
         )}
       </div>
-      <span
-        className={`text-text-muted text-sm lg:text-base  py-3 ${
-          title ? "ml-6" : ""
-        }`}
-      >
+      <span className={`text-text-muted   py-3 ${title ? "ml-6" : ""}`}>
         {text}
       </span>
     </div>
