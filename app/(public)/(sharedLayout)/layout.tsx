@@ -9,7 +9,11 @@ import { ReactNode } from "react";
 export default function Layout({ children }: { children: ReactNode }) {
   const pathname = usePathname();
 
-  if (pathname.split("/").includes("profile")) return children;
+  if (
+    pathname.split("/").includes("profile") ||
+    pathname.split("/").includes("course")
+  )
+    return children;
 
   return (
     <div className="grid grid-cols-1 place-items-center py-10 lg:grid-cols-[300px_1fr] ">
