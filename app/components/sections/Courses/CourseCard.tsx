@@ -26,7 +26,7 @@ export default function CourseCard() {
           <div className="flex flex-row items-center  gap-2 justify-between ">
             <div className="flex flex-row items-center gap-1">
               <span>
-                <IconIonicIosTimer className="stroke-default-color fill-default-color  stroke-[.1px] text-sm " />
+                <IconIonicIosTimer className=" fill-text-muted  stroke-none text-sm " />
               </span>
               <p className="text-xs font-semibold text-text-muted">
                 {10} hours and {20} min
