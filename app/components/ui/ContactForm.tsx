@@ -21,7 +21,7 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="md:absolute md:w-92 md:right-0 lg:left-1/2  lg:-translate-x-1/5 md:top-1/2 md:-translate-y-1/2 bg-secondary-default flex flex-col py-4 px-6 gap-4 rounded-4xl">
+    <div className="md:absolute md:w-92 md:right-0 lg:left-1/2  lg:-translate-x-1/5 md:top-1/2 md:-translate-y-1/2 bg-secondary-default flex flex-col py-4 px-6 gap-4 rounded-3xl">
       <h3 className="text-base my-2 font-semibold py-2 border-b-2 border-gray-300">
         Send Us a Message
       </h3>

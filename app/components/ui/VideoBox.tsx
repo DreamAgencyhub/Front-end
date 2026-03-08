@@ -29,7 +29,7 @@ export default function VideoBox({
           {subTitle}
         </span>
       </div>
-      <div className=" relative rounded-4xl aspect-video w-full lg:max-w-4xl self-center bg-gray-600">
+      <div className=" relative rounded-3xl aspect-video w-full lg:max-w-4xl self-center bg-gray-600">
         <p className=" absolute bottom-4 left-3 text-xs text-gray-200 ">
           {coverText && coverText}
         </p>

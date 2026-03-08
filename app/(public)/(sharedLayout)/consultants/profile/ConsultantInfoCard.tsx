@@ -5,7 +5,7 @@ import SvgIconMaterialLocationOn from "@/app/components/icons/IconMaterialLocati
 
 export default function ConsultantInfoCard() {
   return (
-    <div className="relative w-88 bg-secondary-default rounded-4xl flex flex-col items-center shrink-0  h-fit pb-4 border-b-3 border-primary-500 md:grid md:grid-cols-[100px_1fr] md:w-full lg:w-4xl">
+    <div className="relative w-88 bg-secondary-default rounded-3xl flex flex-col items-center shrink-0  h-fit pb-4 border-b-3 border-primary-500 md:grid md:grid-cols-[100px_1fr] md:w-full lg:w-4xl">
       <div className=" relative w-full bg-default-color h-16 md:w-82 md:bg-secondary-default z-10 md:rotate-90 md:-left-26">
         <div className=" absolute right-1/2 translate-x-1/2 z-20 bg-default-color flex items-center justify-center w-36 h-36 md:w-38 md:h-38 rounded-full md:top-0  ">
           <div className="relative w-32 h-32 rounded-full overflow-hidden md:-rotate-90  ">

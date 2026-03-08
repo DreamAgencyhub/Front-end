@@ -19,7 +19,7 @@ export default function IconBox({
     <div className={` ${className} flex flex-col text-sm lg:text-base`}>
       <div className="flex flex-row gap-5 items-center ">
         <div
-          className={` ${boxStyle} bg-primary-500 text-gray-50 rounded-3xl p-3 w-18 lg:w-24 lg:rounded-4xl lg:text-5xl aspect-square flex justify-center items-center shadow-[0px_0px_20px_5px] shadow-primary-200 dark:shadow-primary-900 text-4xl`}
+          className={` ${boxStyle} bg-primary-500 text-gray-50 rounded-4xl p-3 w-18 lg:w-24  lg:text-5xl aspect-square flex justify-center items-center shadow-[0px_0px_20px_5px] shadow-primary-200 dark:shadow-primary-900 text-4xl`}
         >
           {icon}
         </div>

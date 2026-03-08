@@ -4,7 +4,7 @@ import Button from "../../ui/Button";
 
 export default function ConsultantsCard() {
   return (
-    <div className="relative shrink-0 rounded-4xl bg-gray-50 1 w-60 h-full overflow-hidden">
+    <div className="relative shrink-0 rounded-3xl bg-gray-50 1 w-60 h-full overflow-hidden">
       <div className="relative h-24 bg-gray-50 shadow-md" />
 
       <div className="relative bg-[#2A2A2A] dark:bg-secondary-default pt-20 pb-6 px-4 text-center h-full">

@@ -40,7 +40,7 @@ export const SliderTrack = ({ children }: { children: ReactNode }) => {
   const translatePercentage = (currentIndex * 100) / visibleItems;
 
   return (
-    <div className=" select-none rounded-4xl relative w-full bg-default-color px-4 py-10 md:mx-4  items-center justify-center  md:col-span-5">
+    <div className=" select-none rounded-3xl relative w-full bg-default-color px-4 py-10 md:mx-4  items-center justify-center  md:col-span-5">
       <SliderBtn type="prev" handleClick={prev} />
       <SliderBtn type="next" handleClick={next} />
       <div className=" relative overflow-hidden w-full">

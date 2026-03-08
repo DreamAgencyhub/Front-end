@@ -40,7 +40,7 @@ export default function TestimonialSlider({ data }: Props) {
   return (
     <div className="relative w-85 h-103 mx-auto">
       <div
-        className="absolute inset-0 z-10 rounded-4xl shadow-md overflow-hidden"
+        className="absolute inset-0 z-10 rounded-3xl shadow-md overflow-hidden"
         style={{
           transform: "translate(-16px, -14px) rotate(-6deg) scale(0.94)",
         }}
@@ -63,7 +63,7 @@ export default function TestimonialSlider({ data }: Props) {
             opacity: 0,
             transition: { duration: 0.5, ease: "easeInOut" },
           }}
-          className="absolute inset-0 z-20 rounded-4xl  shadow-xl overflow-hidden"
+          className="absolute inset-0 z-20 rounded-3xl  shadow-xl overflow-hidden"
         >
           <TestimonialCard data={data[index]} />
         </motion.div>

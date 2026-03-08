@@ -43,7 +43,7 @@ const contactInfo = [
 export default function page() {
   return (
     <div className=" relative grid grid-cols-1 py-10 font-semibold gap-10 md:grid-cols-8  ">
-      <div className="bg-primary-500 rounded-4xl md:rounded-r-[60px]  flex flex-col gap-4 p-6  md:col-span-5">
+      <div className="bg-primary-500 rounded-3xl md:rounded-r-[60px]  flex flex-col gap-4 p-6  md:col-span-5">
         <div className="md:w-100 lg:ml-10 flex flex-col gap-4 py-8">
           <h1 className="text-2xl font-bold text-white">Contact Us</h1>
           <p className="text-gray-50 ">

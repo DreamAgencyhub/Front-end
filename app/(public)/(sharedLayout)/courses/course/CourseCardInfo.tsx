@@ -36,7 +36,7 @@ const courseInfo = [
 
 export default function CourseCardInfo() {
   return (
-    <div className="rounded-4xl bg-secondary-default px-6 pb-6 grid grid-cols-1 md:grid-cols-2 md:grid-rows-[1fr_140px] lg:grid-rows-[200px_100px_120px]">
+    <div className="rounded-3xl bg-secondary-default px-6 pb-6 grid grid-cols-1 md:grid-cols-2 md:grid-rows-[1fr_140px] lg:grid-rows-[200px_100px_120px]">
       <VideoBox />
 
       <div className="py-4 md:px-4 md:col-start-1 md:row-start-1">
