@@ -2,7 +2,7 @@ import Button from "@/app/components/ui/Button";
 
 export default function BoxPrice() {
   return (
-    <div className="rounded-3xl bg-secondary-default flex flex-col items-center gap-4 p-4 md:shrink-0 md:w-58 h-fit lg:w-82">
+    <div className="rounded-3xl bg-secondary-default flex flex-col items-center gap-4 p-4 md:shrink-0 md:w-58 h-fit lg:w-auto">
       <div className="flex flex-row justify-between items-center w-full md:gap-2 md:flex-col-reverse">
         <p className="text-2xl font-bold "> $ 98.00 </p>
         <div className="flex items-center  gap-4">

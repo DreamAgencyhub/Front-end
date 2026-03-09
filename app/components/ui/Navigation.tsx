@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ReactNode } from "react";
+import { MouseEvent, ReactNode } from "react";
 
 type NavigationItem = {
   label: string;
@@ -13,6 +13,7 @@ type NavigationItem = {
 interface NavigationProps {
   className?: string;
   bulletPoint?: boolean;
+  scroll?: boolean;
   navigationItems: NavigationItem[];
 }
 
@@ -20,8 +21,37 @@ export default function Navigation({
   className,
   bulletPoint,
   navigationItems,
+  scroll,
 }: NavigationProps) {
   const pathname = usePathname();
+  const handleScroll = (e: MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+
+    if (!scroll) return;
+
+    const elementId = href.split("/").at(-1);
+
+    if (!elementId) return;
+
+    const element = document.getElementById(elementId);
+
+    const rec = element?.getBoundingClientRect();
+
+    if (!rec) return;
+
+    const y = rec?.top + window.scrollY;
+
+    window.scrollTo({
+      top: y,
+      behavior: "smooth",
+    });
+
+    e.currentTarget.classList.add(
+      "text-primary-500",
+      "before:content-['•']",
+      "before:mr-1",
+    );
+  };
 
   return (
     <ul className={` ${className}  gap-10 `}>
@@ -31,13 +61,14 @@ export default function Navigation({
           key={label}
         >
           <Link
+            onClick={(e) => handleScroll(e, href)}
             className={`${
               pathname === href ? "text-primary-600" : ""
-            } flex flex-row items-center gap-2 `}
-            href={href}
+            } flex flex-row items-center `}
+            href={!scroll ? href : pathname}
           >
             {bulletPoint ? (
-              <span className="font-extrabold text-2xl">&bull;</span>
+              <span className="font-extrabold text-2xl mr-2">&bull;</span>
             ) : (
               <span className="py-2">{Icon}</span>
             )}{" "}

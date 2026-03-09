@@ -14,7 +14,7 @@ export default function BoxExpander({ children }: { children: ReactNode }) {
         !show ? "h-40 md:h-60" : "h-fit"
       }`}
     >
-      <div className="z-10">{children}</div>
+      <div className="z-10 pb-10 pt-1 ">{children}</div>
       {!show ? (
         <div className="bg-linear-0 from-secondary-default to-secondary-default/90 z-30 w-full h-16 absolute bottom-0 left-0 right-0 text-center flex items-center justify-center  ">
           <div
