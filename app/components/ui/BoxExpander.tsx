@@ -10,7 +10,7 @@ export default function BoxExpander({ children }: { children: ReactNode }) {
 
   return (
     <div
-      className={`relative rounded-3xl py-4 px-5 bg-secondary-default  overflow-hidden ${
+      className={`relative rounded-3xl py-4 px-5 bg-secondary-default overflow-hidden ${
         !show ? "h-40 md:h-60" : "h-fit"
       }`}
     >

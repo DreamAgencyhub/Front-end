@@ -57,7 +57,7 @@ export default function Navigation({
     <ul className={` ${className}  gap-10 `}>
       {navigationItems.map(({ label, href, icon: Icon }) => (
         <li
-          className="text-text-default  hover:text-primary-500 transition-all py-1 "
+          className="text-text-default hover:text-primary-500 transition-all py-1 "
           key={label}
         >
           <Link
@@ -70,7 +70,7 @@ export default function Navigation({
             {bulletPoint ? (
               <span className="font-extrabold text-2xl mr-2">&bull;</span>
             ) : (
-              <span className="py-2">{Icon}</span>
+              Icon && <span className="py-2 mr-2">{Icon}</span>
             )}{" "}
             {label}
           </Link>
