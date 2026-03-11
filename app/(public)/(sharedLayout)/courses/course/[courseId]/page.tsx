@@ -93,6 +93,29 @@ const accordionData = [
   },
 ];
 
+const commonQuestionsData = [
+  {
+    question: `What's main gol of this course?`,
+    answer:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam enim deserunt atque fugit, suscipit ex nisi pariatur porro facere esse ipsum quod explicabo sapiente rerum,",
+  },
+  {
+    question: `Do I need prerequisites?`,
+    answer:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam enim deserunt atque fugit, suscipit ex nisi pariatur porro facere esse ipsum quod explicabo sapiente rerum,",
+  },
+  {
+    question: `How can I get help?`,
+    answer:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam enim deserunt atque fugit, suscipit ex nisi pariatur porro facere esse ipsum quod explicabo sapiente rerum,",
+  },
+  {
+    question: `Does this course has a refund warranty?`,
+    answer:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam enim deserunt atque fugit, suscipit ex nisi pariatur porro facere esse ipsum quod explicabo sapiente rerum,",
+  },
+];
+
 export default function page() {
   return (
     <div className="flex flex-col gap-8 py-10">
@@ -158,6 +181,18 @@ export default function page() {
               </h3>
               <div className="py-4 flex flex-col gap-4 ">
                 <AccordionGroup data={accordionData} />
+              </div>
+            </div>
+          </BoxExpander>
+        </div>
+        <div className="md:col-start-2 ">
+          <BoxExpander>
+            <div id="">
+              <h3 className="text-xl font-bold pt-1 text-primary-500 ">
+                Common Q&A
+              </h3>
+              <div className="py-4 flex flex-col gap-4 ">
+                <AccordionGroup data={commonQuestionsData} />
               </div>
             </div>
           </BoxExpander>

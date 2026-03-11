@@ -29,6 +29,7 @@ export { default as IconMaterialUpdate } from "./IconMaterialUpdate";
 export { default as IconMetroCalendar } from "./IconMetroCalendar";
 export { default as IconMetroSearch } from "./IconMetroSearch";
 export { default as IconOpenMicrophone } from "./IconOpenMicrophone";
+export { default as IconOpenQuestionMark } from "./IconOpenQuestionMark";
 export { default as IconWeatherCloudDown } from "./IconWeatherCloudDown";
 export { default as Icons8Apple } from "./Icons8Apple";
 export { default as Icons8Google } from "./Icons8Google";
