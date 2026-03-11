@@ -62,7 +62,7 @@ function AccordionItem({
     <div
       ref={ref}
       onClick={() => onToggle(id)}
-      className=" bg-secondary-default rounded-2xl border border-text-muted/30  py-2 px-2 flex flex-col font-semibold  select-none cursor-pointer"
+      className=" bg-secondary-default rounded-2xl border border-text-muted/30  pt-1 pb-4 px-2 flex flex-col font-semibold  select-none cursor-pointer"
       style={{
         overflow: "hidden",
         height,
