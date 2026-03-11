@@ -24,9 +24,8 @@ export default function Navigation({
   scroll,
 }: NavigationProps) {
   const pathname = usePathname();
-  const handleScroll = (e: MouseEvent<HTMLAnchorElement>, href: string) => {
-    e.preventDefault();
 
+  const handleScroll = (e: MouseEvent<HTMLAnchorElement>, href: string) => {
     if (!scroll) return;
 
     const elementId = href.split("/").at(-1);
