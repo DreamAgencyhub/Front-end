@@ -3,6 +3,7 @@ import CourseCardInfo from "../CourseCardInfo";
 import BoxPrice from "../BoxPrice";
 import Navigation from "@/app/components/ui/Navigation";
 import AccordionGroup from "../Accordion";
+import AskQuestionsSection from "../AskQuestionsSection";
 
 const navItems = [
   {
@@ -14,8 +15,8 @@ const navItems = [
     label: "Lectures",
   },
   {
-    href: "/comments",
-    label: "Comments",
+    href: "/questions",
+    label: "Questions",
   },
 ];
 
@@ -185,17 +186,17 @@ export default function page() {
             </div>
           </BoxExpander>
         </div>
-        <div className="md:col-start-2 ">
-          <BoxExpander>
-            <div id="">
-              <h3 className="text-xl font-bold pt-1 text-primary-500 ">
-                Common Q&A
-              </h3>
-              <div className="py-4 flex flex-col gap-4 ">
-                <AccordionGroup data={commonQuestionsData} />
-              </div>
-            </div>
-          </BoxExpander>
+        <div className="md:col-start-2 rounded-3xl bg-secondary-default py-6 px-4">
+          <h3 className="text-xl font-bold pt-1 text-primary-500 ">
+            Common Q&A
+          </h3>
+          <div className="py-4 flex flex-col gap-4 ">
+            <AccordionGroup data={commonQuestionsData} />
+          </div>
+        </div>
+
+        <div className="md:col-start-2" id="questions">
+          <AskQuestionsSection />
         </div>
       </div>
     </div>
