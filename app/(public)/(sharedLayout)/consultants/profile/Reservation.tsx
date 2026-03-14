@@ -262,7 +262,7 @@ export default function Reservation() {
           >
             <Modal>
               <Modal.Header>
-                <div className="w-full md:w-92">
+                <div className="w-full md:w-92 border-b-2 pb-2 border-text-muted/30">
                   <h3 className="text-lg font-semibold pb-2">
                     Reservation Process
                   </h3>
@@ -356,7 +356,7 @@ export default function Reservation() {
       <Modal.Window name="final_step">
         <Modal>
           <Modal.Header>
-            <div className="w-full md:w-92">
+            <div className="w-full md:w-92 ">
               <h3 className="text-lg font-semibold pb-2">
                 Reservation Process
               </h3>
