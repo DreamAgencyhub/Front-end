@@ -96,7 +96,9 @@ export default function Comment({ comment, background }: CommentProps) {
 
       <div>
         <div
-          className={` ${background} relative rounded-3xl px-4 py-6 bg-secondary-default md:w-120 h-fit mt-6 `}
+          className={`${
+            !background ? "bg-secondary-default" : background
+          } relative rounded-3xl px-4 py-6 bg-secondary-default md:w-120 h-fit mt-6 `}
         >
           <div className="flex flex-row items-center justify-between border-b border-gray-400 pb-2 ">
             <div
