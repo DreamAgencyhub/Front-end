@@ -5,7 +5,7 @@ import Avatar from "@/app/components/ui/Avatar";
 export default function ConsultantInfoCard() {
   return (
     <div className="relative w-88 bg-secondary-default rounded-3xl flex flex-col items-center shrink-0  h-fit pb-4 border-b-3 border-primary-500 md:grid md:grid-cols-[100px_1fr] md:w-full lg:w-4xl">
-      <Avatar />
+      <Avatar responsive />
 
       <div className=" mt-20 md:mt-6 flex flex-col bg-secondary-default py-2  px-6 md:grid md:grid-cols-1 md:grid-rows-[60px_1fr_auto] z-40">
         <div className="border-b border-dashed border-text-muted pb-4 md:pb-0  text-center md:text-start ">

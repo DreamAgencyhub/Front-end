@@ -17,7 +17,7 @@ export default function VideoBox({
 }: VideoBox) {
   return (
     <div className="flex flex-col w-full items-center gap-6">
-      <div className="w-full">
+      <div className="w-full flex flex-col items-center">
         <h3
           className={`${titleStyle} ${titleAlign} text-2xl font-bold w-full lg:max-w-4xl  ${
             border ? " py-4 border-y border-dashed" : ""
