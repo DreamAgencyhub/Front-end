@@ -27,6 +27,29 @@ export default function Navigation({
 
   const handleScroll = (e: MouseEvent<HTMLAnchorElement>, href: string) => {
     if (!scroll) return;
+    e.preventDefault();
+
+    Array.prototype.slice
+      .call(e.currentTarget.parentElement?.parentElement?.children)
+      .map((item) => {
+        if (item.querySelector("a").getAttribute("href") === href) {
+          item
+            .querySelector("a")
+            .classList.add(
+              "text-primary-500",
+              "before:content-['•']",
+              "before:mr-1",
+            );
+        } else {
+          item
+            .querySelector("a")
+            .classList.remove(
+              "text-primary-500",
+              "before:content-['•']",
+              "before:mr-1",
+            );
+        }
+      });
 
     const elementId = href.split("/").at(-1);
 
@@ -44,12 +67,6 @@ export default function Navigation({
       top: y,
       behavior: "smooth",
     });
-
-    e.currentTarget.classList.add(
-      "text-primary-500",
-      "before:content-['•']",
-      "before:mr-1",
-    );
   };
 
   return (
@@ -64,7 +81,7 @@ export default function Navigation({
             className={`${
               pathname === href ? "text-primary-600" : ""
             } flex flex-row items-center `}
-            href={!scroll ? href : pathname}
+            href={href}
           >
             {bulletPoint ? (
               <span className="font-extrabold text-2xl mr-2">&bull;</span>
