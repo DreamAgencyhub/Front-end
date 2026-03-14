@@ -116,17 +116,19 @@ function AccordionItem({
               className="bg-default-color rounded-xl flex flex-row items-center justify-between py-3 px-4 border border-text-default/2 hover:shadow-lg transition-shadow "
             >
               <div className="flex flex-row items-center gap-2 ">
-                <span className="rounded-full px-2.5 py-1 bg-gray-300 text-xs ">
+                <span className="rounded-full px-2.5 py-1 bg-gray-300 dark:bg-secondary-default text-xs ">
                   {index + 1}
                 </span>
-                <span className="text-xs md:text-sm font-semibold">
+                <span className="text-xs md:text-sm font-semibold ">
                   {item.title}
                 </span>
               </div>
 
               <div className="flex flex-row gap-2 items-center">
                 <IconIonicIosTimer className="stroke-none fill-text-muted" />
-                <span className="text-xs md:text-sm">{item.duration}</span>
+                <span className="text-xs md:text-sm text-nowrap ">
+                  {item.duration}
+                </span>
               </div>
             </div>
           ))}
