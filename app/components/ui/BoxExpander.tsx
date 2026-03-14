@@ -26,7 +26,7 @@ export default function BoxExpander({ children }: { children: ReactNode }) {
           </div>
         </div>
       ) : (
-        <div className=" absolute z-40 w-full py-4 bottom-0 right-0 left-0 flex items-center justify-center ">
+        <div className=" absolute z-30 w-full py-4 bottom-0 right-0 left-0 flex items-center justify-center ">
           <div
             onClick={toggleShow}
             className="flex items-center gap-2 bg-default-color py-2 px-3 cursor-pointer hover:bg-secondary-muted  rounded-xl"
