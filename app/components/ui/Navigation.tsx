@@ -1,8 +1,9 @@
 "use client";
 
+import { handleScroll } from "@/app/utilities/helpers";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { MouseEvent, ReactNode } from "react";
+import { ReactNode } from "react";
 
 type NavigationItem = {
   label: string;
@@ -25,50 +26,6 @@ export default function Navigation({
 }: NavigationProps) {
   const pathname = usePathname();
 
-  const handleScroll = (e: MouseEvent<HTMLAnchorElement>, href: string) => {
-    if (!scroll) return;
-    e.preventDefault();
-
-    Array.prototype.slice
-      .call(e.currentTarget.parentElement?.parentElement?.children)
-      .map((item) => {
-        if (item.querySelector("a").getAttribute("href") === href) {
-          item
-            .querySelector("a")
-            .classList.add(
-              "text-primary-500",
-              "before:content-['•']",
-              "before:mr-1",
-            );
-        } else {
-          item
-            .querySelector("a")
-            .classList.remove(
-              "text-primary-500",
-              "before:content-['•']",
-              "before:mr-1",
-            );
-        }
-      });
-
-    const elementId = href.split("/").at(-1);
-
-    if (!elementId) return;
-
-    const element = document.getElementById(elementId);
-
-    const rec = element?.getBoundingClientRect();
-
-    if (!rec) return;
-
-    const y = rec?.top + window.scrollY;
-
-    window.scrollTo({
-      top: y,
-      behavior: "smooth",
-    });
-  };
-
   return (
     <ul className={` ${className}  gap-10 `}>
       {navigationItems.map(({ label, href, icon: Icon }) => (
@@ -77,7 +34,7 @@ export default function Navigation({
           key={label}
         >
           <Link
-            onClick={(e) => handleScroll(e, href)}
+            onClick={(e) => handleScroll(e, href, scroll, true)}
             className={`${
               pathname === href ? "text-primary-600" : ""
             } flex flex-row items-center `}

@@ -8,7 +8,7 @@ interface Button {
   isDisabled?: boolean;
   directTo?: string;
   className?: string;
-  onClick?: () => void;
+  onClick?: React.MouseEventHandler<HTMLElement>;
 }
 
 const sizes = {
@@ -50,6 +50,7 @@ export default function Button({
   if (directTo)
     return (
       <Link
+        onClick={onClick}
         className={` ${className} ${sizeStyle} ${variantStyle} text-gray-50 text-center rounded-xl`}
         href={directTo}
       >

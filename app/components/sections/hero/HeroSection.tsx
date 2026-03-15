@@ -4,6 +4,9 @@ import InfoWidget from "./InfoWidget";
 import { infoWidgetsData } from "./heroSectoinData";
 import Button from "../../ui/Button";
 import SvgIconAwesomeArrowDown from "../../icons/IconAwesomeArrowDown";
+import { handleScroll } from "@/app/utilities/helpers";
+import { MouseEvent } from "react";
+import ScrollButton from "./ScrollButton";
 
 export default function HeroSection() {
   return (
@@ -32,14 +35,7 @@ export default function HeroSection() {
             alt="a-successful-businessman"
           />
         </div>
-        <Button
-          directTo="#statistics"
-          variant="primary"
-          size="medium"
-          className="rounded-full!  p-3! absolute bottom-0 -translate-x-1/2 left-1/2"
-        >
-          <SvgIconAwesomeArrowDown />
-        </Button>
+        <ScrollButton />
       </div>
       <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5  gap-6 place-items-center  mt-8">
         <InfoWidget
