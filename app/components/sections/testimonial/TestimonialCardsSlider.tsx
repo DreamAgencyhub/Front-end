@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import TestimonialCard from "./TestimonialCard";
 import Button from "../../ui/Button";
+import SliderBtn from "../../ui/slider/SliderBtn";
 
 export type Testimonial = {
   id: number;
@@ -69,23 +70,9 @@ export default function TestimonialSlider({ data }: Props) {
         </motion.div>
       </AnimatePresence>
 
-      <div className="absolute -bottom-14 left-1/2 -translate-x-1/2 flex gap-4">
-        <Button
-          variant="secondary"
-          size="small"
-          onClick={() => handlePrev()}
-          className="font-semibold"
-        >
-          Prev
-        </Button>
-        <Button
-          variant="primary"
-          size="small"
-          onClick={() => handleNext()}
-          className=" shadow-none font-semibold "
-        >
-          Next
-        </Button>
+      <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 flex  bg-red-50 w-16">
+        <SliderBtn type="next" handleClick={handleNext} />
+        <SliderBtn type="prev" handleClick={handlePrev} />
       </div>
     </div>
   );
