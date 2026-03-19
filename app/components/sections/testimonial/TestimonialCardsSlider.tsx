@@ -3,7 +3,6 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import TestimonialCard from "./TestimonialCard";
-import Button from "../../ui/Button";
 import SliderBtn from "../../ui/slider/SliderBtn";
 
 export type Testimonial = {
