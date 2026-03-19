@@ -1,4 +1,5 @@
 export { default as Analytics } from "./Analytics";
+export { default as ArrowIcon } from "./ArrowIcon";
 export { default as BagIcon } from "./BagIcon";
 export { default as BooksSecond } from "./BooksSecond";
 export { default as BurgerMenuSvgrepoCom } from "./BurgerMenuSvgrepoCom";
@@ -25,6 +26,7 @@ export { default as IconAwesomeSortAmountUp } from "./IconAwesomeSortAmountUp";
 export { default as IconAwesomeTelegramPlane } from "./IconAwesomeTelegramPlane";
 export { default as IconFeatherCalendar } from "./IconFeatherCalendar";
 export { default as IconFeatherPlusCircle } from "./IconFeatherPlusCircle";
+export { default as IconFeatherUser } from "./IconFeatherUser";
 export { default as IconFeatherUsers } from "./IconFeatherUsers";
 export { default as IconIonicIosArrowLeft } from "./IconIonicIosArrowLeft";
 export { default as IconIonicIosArrowRight } from "./IconIonicIosArrowRight";

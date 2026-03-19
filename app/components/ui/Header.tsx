@@ -4,6 +4,7 @@ import HamburgerMenu from "./HamburgerMenu";
 import Logo from "./Logo";
 import Navigation from "./Navigation";
 import ThemeMode from "./ThemeMode";
+import UserAvatar from "./UserAvatar";
 
 export default function Header() {
   return (
@@ -20,14 +21,16 @@ export default function Header() {
           />
           <Logo />
           <ThemeMode className="lg:order-3 place-self-center " />
-          <Button
+          {/* <Button
             className={"lg:order-last font-semibold text-sm"}
             directTo="/auth/login"
             variant="primary"
             size="medium"
           >
             Sing in
-          </Button>
+          </Button> */}
+
+          <UserAvatar />
         </div>
       </div>
     </div>
