@@ -18,35 +18,43 @@ const navigationInfo = [
     label: "Dashboard",
     href: "/profile",
     icon: (
-      <ShoppingBagSecond className="fill-primary-600 stroke-none text-xl  " />
+      <ShoppingBagSecond className="fill-primary-600 dark:fill-primary-50 stroke-none text-xl  " />
     ),
   },
   {
     label: "Courses",
     href: "/profile/courses",
-    icon: <BooksSecond className="fill-primary-600 stroke-none text-xl  " />,
+    icon: (
+      <BooksSecond className="fill-primary-600 dark:fill-primary-50 stroke-none text-xl  " />
+    ),
   },
   {
     label: "Reservations",
     href: "/profile/reservations",
     icon: (
-      <CalendarClockSecond className="fill-primary-600 stroke-none text-xl  " />
+      <CalendarClockSecond className="fill-primary-600 dark:fill-primary-50 stroke-none text-xl  " />
     ),
   },
   {
     label: "Sent Tickets",
     href: "/profile/sent-tickets",
-    icon: <Envelopes className="fill-primary-600 stroke-none text-xl  " />,
+    icon: (
+      <Envelopes className="fill-primary-600 dark:fill-primary-50 stroke-none text-xl  " />
+    ),
   },
   {
     label: "Send Ticket",
     href: "/support",
-    icon: <Envelope className="fill-primary-600 stroke-none text-xl  " />,
+    icon: (
+      <Envelope className="fill-primary-600 dark:fill-primary-50 stroke-none text-xl  " />
+    ),
   },
   {
     label: "Log out",
     href: "/support",
-    icon: <Exit className="fill-primary-600 stroke-none text-xl  " />,
+    icon: (
+      <Exit className="fill-primary-600 dark:fill-primary-50 stroke-none text-xl  " />
+    ),
     className: "bg-primary-500! text-gray-50! ",
   },
 ];
