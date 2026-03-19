@@ -1,37 +1,27 @@
 import Link from "next/link";
+import { ReactNode } from "react";
 
-const navigationInfo = [
-  {
-    label: "Dashboard",
-    href: "/profile",
-    icon: "",
-  },
-  {
-    label: "Courses",
-    href: "/profile/courses",
-    icon: "",
-  },
-  {
-    label: "Reservations",
-    href: "/profile/reservations",
-    icon: "",
-  },
-  {
-    label: "Sent Tickets",
-    href: "/profile/sent-tickets",
-    icon: "",
-  },
-  {
-    label: "Support",
-    href: "/support",
-    icon: "",
-  },
-];
+type navigationInfo = {
+  label: string;
+  href: string;
+  icon?: ReactNode;
+  className?: string;
+};
 
-export default function Nav() {
-  return (
-    <div className="rounded-xl py-4 px-2 bg-secondary-default flex flex-row justify-center w-full font-semibold text-primary-500 ">
-      <Link href={"/"}>Dashboard</Link>
+interface NavProps {
+  NavigationData: navigationInfo[];
+}
+
+export default function Nav({ NavigationData }: NavProps) {
+  return NavigationData?.map((item) => (
+    <div
+      key={item.label}
+      className={` ${item?.className} rounded-xl py-4 px-6 bg-secondary-default flex flex-row items-center justify-center w-full font-semibold text-primary-500 `}
+    >
+      <div className="">{item.icon}</div>
+      <Link className="w-full text-center" href={"/"}>
+        {item.label}
+      </Link>
     </div>
-  );
+  ));
 }
