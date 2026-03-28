@@ -31,7 +31,7 @@ export default function Avatar({
       <div
         className={`absolute right-0 -bottom-20 bg-secondary-default rounded-3xl h-26 z-20 ${
           responsive && " md:-bottom-7 md:-right-4"
-        } ${!noRotate ? "w-26 " : " w-26 md:w-11  lg:w-24"}`}
+        } ${!noRotate ? "w-26" : " w-26 md:w-11  lg:w-24"}`}
       ></div>
       <div
         className={`absolute left-0 -bottom-20 bg-secondary-default rounded-3xl w-26 h-26 z-20 ${
