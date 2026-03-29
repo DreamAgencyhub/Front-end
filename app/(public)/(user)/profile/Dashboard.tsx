@@ -1,9 +1,13 @@
 import MobileSidebar from "./MobileSidebar";
+import Sidebar from "./Sidebar";
 
 export default function Dashboard() {
   return (
-    <div className="">
+    <div>
       <MobileSidebar />
+      <div className="hidden lg:block">
+        <Sidebar />
+      </div>
     </div>
   );
 }

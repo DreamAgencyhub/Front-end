@@ -3,7 +3,7 @@ import Dashboard from "./Dashboard";
 
 export default function rootLayout({ children }: { children: ReactNode }) {
   return (
-    <div className="grid grid-cols-subgrid gap-4 h-screen">
+    <div className=" h-screen py-8 lg:grid lg:grid-cols-[350px_1fr]">
       <Dashboard />
 
       {children}

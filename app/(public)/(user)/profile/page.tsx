@@ -1,3 +1,5 @@
+import Header from "./Header";
+
 export default function page() {
-  return <div>users profile</div>;
+  return <Header />;
 }
