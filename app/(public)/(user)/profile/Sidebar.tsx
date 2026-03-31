@@ -6,17 +6,9 @@ import {
   Envelope,
   Envelopes,
   Exit,
-  ShoppingBagSecond,
 } from "@/app/components/icons";
 
 const navigationInfo = [
-  {
-    label: "Dashboard",
-    href: "/profile",
-    icon: (
-      <ShoppingBagSecond className="fill-primary-600 dark:fill-primary-50 stroke-none text-xl  " />
-    ),
-  },
   {
     label: "Courses",
     href: "/profile/courses",

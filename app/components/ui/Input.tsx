@@ -16,6 +16,8 @@ interface InputProps {
   register: UseFormRegisterReturn;
   errors?: FieldErrors<FieldValues>;
   label?: string;
+  disabled?: boolean;
+  defaultValue?: string;
 }
 
 export default function Input({
@@ -26,6 +28,8 @@ export default function Input({
   register,
   errors,
   label,
+  disabled,
+  defaultValue,
 }: InputProps) {
   const [isPasswordVisible, setIsPasswordVisible] = useState<boolean>(false);
 
@@ -36,7 +40,7 @@ export default function Input({
   return (
     <div className="relative w-full ">
       <span
-        className={`absolute text-rose-600 text-[10px]  font-semibold  ${
+        className={`absolute z-100 text-rose-600 text-[10px]  font-semibold  ${
           label ? " left-16 top-2 text-nowrap " : " -top-4 left-2 "
         }`}
       >
@@ -51,6 +55,8 @@ export default function Input({
         name={name}
         className={` ${className} w-full bg-default-color py-3 px-4 rounded-2xl focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 transition duration-200 focus:shadow-xl shadow-primary-100/50 dark:shadow-primary-900/50 dark:ring-offset-primary-400 mt-1`}
         type={name === "password" && isPasswordVisible ? "text" : type}
+        disabled={disabled}
+        defaultValue={defaultValue}
       />
       {name === "password" && (
         <div

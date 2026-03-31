@@ -5,7 +5,7 @@ import { useState } from "react";
 import Sidebar from "./Sidebar";
 
 export default function MobileSidebar() {
-  const [isOpen, setIsOpen] = useState<boolean>(true);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const handleClick = () => setIsOpen((prev) => !prev);
 
