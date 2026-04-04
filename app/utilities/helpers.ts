@@ -81,3 +81,9 @@ export const handleScroll = (
     behavior: "smooth",
   });
 };
+
+export function calculateOffPrice(price: number, off: number) {
+  const offAmount = Math.round(price * (off / 100));
+
+  return Math.round(price - offAmount);
+}

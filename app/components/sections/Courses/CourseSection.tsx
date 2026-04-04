@@ -1,16 +1,81 @@
 "use client";
 import { OnlineLearning } from "../../icons";
 import Slider from "../../ui/slider/Slider";
-import CourseCard from "./CourseCard";
+import CourseCard, { Course } from "../../ui/CourseCard";
 
-const items = [
-  { text: "test1" },
-  { text: "test2" },
-  { text: "test3" },
-  { text: "test4" },
-  { text: "test5" },
-  { text: "test6" },
-  { text: "test7" },
+const items: Course[] = [
+  {
+    id: "fe.1",
+    cover: undefined,
+    title: "Financial Markets",
+    price: 470,
+    off: 8,
+    status: "finished",
+    duration: {
+      hour: 10,
+      min: 20,
+    },
+  },
+  {
+    id: "fe.2",
+    cover: undefined,
+    title: "Financial Markets",
+    price: 470,
+    off: 8,
+    status: "finished",
+    duration: {
+      hour: 10,
+      min: 20,
+    },
+  },
+  {
+    id: "fe.3",
+    cover: undefined,
+    title: "Financial Markets",
+    price: 470,
+    off: 8,
+    status: "finished",
+    duration: {
+      hour: 10,
+      min: 20,
+    },
+  },
+  {
+    id: "fe.4",
+    cover: undefined,
+    title: "Financial Markets",
+    price: 470,
+    off: 8,
+    status: "finished",
+    duration: {
+      hour: 10,
+      min: 20,
+    },
+  },
+  {
+    id: "fe.5",
+    cover: undefined,
+    title: "Financial Markets",
+    price: 470,
+    off: 8,
+    status: "finished",
+    duration: {
+      hour: 10,
+      min: 20,
+    },
+  },
+  {
+    id: "fe.6",
+    cover: undefined,
+    title: "Financial Markets",
+    price: 470,
+    off: 8,
+    status: "finished",
+    duration: {
+      hour: 10,
+      min: 20,
+    },
+  },
 ];
 
 export default function CourseSection() {
@@ -30,8 +95,8 @@ export default function CourseSection() {
         />
         <Slider.Track>
           {items.map((item) => (
-            <Slider.Item key={item.text}>
-              <CourseCard />
+            <Slider.Item key={item.id}>
+              <CourseCard course={item} btnText="Enroll Now" />
             </Slider.Item>
           ))}
         </Slider.Track>

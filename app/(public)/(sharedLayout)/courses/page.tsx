@@ -1,4 +1,4 @@
-import CourseCard from "@/app/components/sections/Courses/CourseCard";
+import CourseCard, { Course } from "@/app/components/ui/CourseCard";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -6,13 +6,79 @@ export const metadata: Metadata = {
   description: "",
 };
 
-const items = [
-  { text: "test1" },
-  { text: "test2" },
-  { text: "test3" },
-  { text: "test4" },
-  { text: "test5" },
-  { text: "test6" },
+const items: Course[] = [
+  {
+    id: "fe.1",
+    cover: undefined,
+    title: "Financial Markets",
+    price: 470,
+    off: 8,
+    status: "finished",
+    duration: {
+      hour: 10,
+      min: 20,
+    },
+  },
+  {
+    id: "fe.2",
+    cover: undefined,
+    title: "Financial Markets",
+    price: 470,
+    off: 8,
+    status: "recording",
+    duration: {
+      hour: 10,
+      min: 20,
+    },
+  },
+  {
+    id: "fe.3",
+    cover: undefined,
+    title: "Financial Markets",
+    price: 470,
+    off: 8,
+    status: "finished",
+    duration: {
+      hour: 10,
+      min: 20,
+    },
+  },
+  {
+    id: "fe.4",
+    cover: undefined,
+    title: "Financial Markets",
+    price: 470,
+    off: 8,
+    status: "finished",
+    duration: {
+      hour: 10,
+      min: 20,
+    },
+  },
+  {
+    id: "fe.5",
+    cover: undefined,
+    title: "Financial Markets",
+    price: 470,
+    off: 8,
+    status: "finished",
+    duration: {
+      hour: 10,
+      min: 20,
+    },
+  },
+  {
+    id: "fe.6",
+    cover: undefined,
+    title: "Financial Markets",
+    price: 470,
+    off: 8,
+    status: "finished",
+    duration: {
+      hour: 10,
+      min: 20,
+    },
+  },
 ];
 
 export default function page() {
@@ -21,9 +87,9 @@ export default function page() {
       {items.map((item) => (
         <div
           className="w-76 h-90 flex items-center justify-center"
-          key={item.text}
+          key={item.id}
         >
-          <CourseCard key={item.text} />
+          <CourseCard btnText="Enroll Now" course={item} key={item.id} />
         </div>
       ))}
     </div>
