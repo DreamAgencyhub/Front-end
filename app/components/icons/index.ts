@@ -10,6 +10,7 @@ export { default as ClosedEye } from "./ClosedEye";
 export { default as Crown } from "./Crown";
 export { default as Discussion } from "./Discussion";
 export { default as ELearning } from "./ELearning";
+export { default as Edit } from "./Edit";
 export { default as Envelope } from "./Envelope";
 export { default as Envelopes } from "./Envelopes";
 export { default as Exit } from "./Exit";

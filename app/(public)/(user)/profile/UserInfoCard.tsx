@@ -1,5 +1,6 @@
 "use client";
 
+import { Edit } from "@/app/components/icons";
 import Avatar from "@/app/components/ui/Avatar";
 import Button from "@/app/components/ui/Button";
 import Input from "@/app/components/ui/Input";
@@ -19,7 +20,18 @@ export default function UserInfoCard() {
   return (
     <div className=" relative rounded-3xl bg-secondary-default h-92 w-87 flex flex-col gap-2 items-center scale-90">
       <Avatar />
-      <div className="mt-18 py-2 text-center">
+      {isEditing && (
+        <label className="relative z-50 bg-secondary-default p-2 rounded-full top-12 cursor-pointer hover:bg-secondary-muted">
+          <Edit className="fill-primary-500 stroke-none text-xs " />
+          <Input
+            name="usersAvatar"
+            register={register("usersAvatar")}
+            type="file"
+            className="hidden"
+          />
+        </label>
+      )}
+      <div className="mt-16 py-2 text-center">
         <Input
           className="text-xl font-bold text-center bg-secondary-default! py-1! "
           disabled={!isEditing}
