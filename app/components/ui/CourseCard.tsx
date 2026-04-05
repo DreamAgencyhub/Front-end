@@ -25,7 +25,7 @@ interface CrouseCardProps {
 export default function CourseCard({ course, btnText }: CrouseCardProps) {
   return (
     <div className=" relative bg-transparent w-60 h-full shrink-0 rounded-3xl overflow-hidden  ">
-      <div className="bg-default-color rounded-3xl aspect-square z-30 w-42 absolute top-1 left-1/2 -translate-x-1/2  flex items-center justify-center  ">
+      <div className="bg-default-color rounded-3xl aspect-square z-30 w-40 absolute top-1 left-1/2 -translate-x-1/2  flex items-center justify-center  ">
         <div className="rounded-3xl w-36 h-36  overflow-hidden shadow-lg ">
           <Image
             src={!course.cover ? CourseCover : course.cover}
@@ -36,8 +36,8 @@ export default function CourseCard({ course, btnText }: CrouseCardProps) {
       </div>
 
       <div className=" relative bg-transparent h-1/3 w-full z-30 ">
-        <div className="rounded-t-full h-40 w-9 lg:w-10 bg-secondary-default absolute left-0 -bottom-30"></div>
-        <div className="rounded-t-full h-40 w-9 lg:w-10 bg-secondary-default absolute right-0 -bottom-30"></div>
+        <div className="rounded-t-full h-40 w-10 lg:w-10 bg-secondary-default absolute left-0 -bottom-30"></div>
+        <div className="rounded-t-full h-40 w-10 lg:w-10 bg-secondary-default absolute right-0 -bottom-30"></div>
       </div>
       <div className="h-62.5 bg-secondary-default flex flex-col items-center justify-center ">
         <div className="pb-2 pt-4 px-3 h-1/2 w-full flex flex-col gap-2 justify-around  relative z-40 text-center ">
