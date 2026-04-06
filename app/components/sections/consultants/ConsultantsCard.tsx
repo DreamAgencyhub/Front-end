@@ -4,15 +4,15 @@ import Button from "../../ui/Button";
 
 export default function ConsultantsCard() {
   return (
-    <div className="relative shrink-0 rounded-3xl bg-gray-50 1 w-60 h-full overflow-hidden">
-      <div className="relative h-24 bg-gray-50 shadow-md" />
+    <div className="relative shrink-0 rounded-3xl bg-default-color  w-60 h-full overflow-hidden">
+      <div className="relative h-24 bg-default-color shadow-md" />
 
       <div className="relative bg-[#2A2A2A] dark:bg-secondary-default pt-20 pb-6 px-4 text-center h-full">
-        <div className="bg-gray-50 absolute left-0 right-0 -top-18 h-20"></div>
+        <div className="bg-default-color absolute left-0 right-0 -top-18 h-20"></div>
         <div className="absolute -top-8 left-0 w-14 h-20 bg-[#2A2A2A] dark:bg-secondary-default rounded-t-4xl"></div>
         <div className="absolute -top-8 right-0 w-14 h-20 bg-[#2A2A2A] dark:bg-secondary-default rounded-t-4xl"></div>
 
-        <div className="absolute -top-14 left-1/2 -translate-x-1/2 w-32 h-32 bg-gray-50 rounded-full flex items-center justify-center">
+        <div className="absolute -top-14 left-1/2 -translate-x-1/2 w-32 h-32 bg-default-color rounded-full flex items-center justify-center">
           <div className="w-28 h-28 rounded-full overflow-hidden">
             <Image
               src={profilePic}

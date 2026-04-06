@@ -139,7 +139,7 @@ export default function CourseCard({ content, btnText }: CrouseCardProps) {
           <Button
             variant="primary"
             size="medium"
-            directTo="/"
+            directTo={`/`}
             className="font-semibold text-sm w-full"
           >
             {btnText}
