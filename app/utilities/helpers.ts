@@ -82,8 +82,17 @@ export const handleScroll = (
   });
 };
 
-export function calculateOffPrice(price: number, off: number) {
-  const offAmount = Math.round(price * (off / 100));
+export function calculateOffPrice(price: number, discount: number) {
+  const discountAmount = Math.round(price * (discount / 100));
 
-  return Math.round(price - offAmount);
+  return Math.round(price - discountAmount);
+}
+
+export function formatDate(date?: Date) {
+  if (!date) return;
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+  const day = String(date.getDate()).padStart(1, "0");
+
+  return ` ${month}/${day}/${year} `;
 }

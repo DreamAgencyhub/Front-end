@@ -25,6 +25,8 @@ export { default as IconAwesomeInstagram } from "./IconAwesomeInstagram";
 export { default as IconAwesomePhone } from "./IconAwesomePhone";
 export { default as IconAwesomeSortAmountUp } from "./IconAwesomeSortAmountUp";
 export { default as IconAwesomeTelegramPlane } from "./IconAwesomeTelegramPlane";
+export { default as IconAwesomeUserClock } from "./IconAwesomeUserClock";
+export { default as IconAwesomeUserTie } from "./IconAwesomeUserTie";
 export { default as IconFeatherCalendar } from "./IconFeatherCalendar";
 export { default as IconFeatherPlusCircle } from "./IconFeatherPlusCircle";
 export { default as IconFeatherUser } from "./IconFeatherUser";

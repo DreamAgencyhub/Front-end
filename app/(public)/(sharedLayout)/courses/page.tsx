@@ -1,4 +1,4 @@
-import CourseCard, { Course } from "@/app/components/ui/CourseCard";
+import CourseCard, { Content } from "@/app/components/ui/CourseCard";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description: "",
 };
 
-const items: Course[] = [
+const items: Content[] = [
   {
     id: "fe.1",
     cover: undefined,
@@ -89,7 +89,7 @@ export default function page() {
           className="w-76 h-90 flex items-center justify-center"
           key={item.id}
         >
-          <CourseCard btnText="Enroll Now" course={item} key={item.id} />
+          <CourseCard btnText="Enroll Now" content={item} key={item.id} />
         </div>
       ))}
     </div>

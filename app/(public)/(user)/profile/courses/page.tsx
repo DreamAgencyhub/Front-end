@@ -1,6 +1,6 @@
-import CourseCard, { Course } from "@/app/components/ui/CourseCard";
+import CourseCard, { Content } from "@/app/components/ui/CourseCard";
 
-const items: Course[] = [
+const items: Content[] = [
   {
     id: "fe.1",
     cover: undefined,
@@ -43,7 +43,7 @@ export default function page() {
           className=" w-full h-90 flex items-center justify-center"
           key={item.id}
         >
-          <CourseCard btnText="More Details" course={item} key={item.id} />
+          <CourseCard btnText="More Details" content={item} key={item.id} />
         </div>
       ))}
     </div>

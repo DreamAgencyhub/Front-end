@@ -1,9 +1,9 @@
 "use client";
 import { OnlineLearning } from "../../icons";
 import Slider from "../../ui/slider/Slider";
-import CourseCard, { Course } from "../../ui/CourseCard";
+import CourseCard, { Content } from "../../ui/CourseCard";
 
-const items: Course[] = [
+const items: Content[] = [
   {
     id: "fe.1",
     cover: undefined,
@@ -96,7 +96,7 @@ export default function CourseSection() {
         <Slider.Track>
           {items.map((item) => (
             <Slider.Item key={item.id}>
-              <CourseCard course={item} btnText="Enroll Now" />
+              <CourseCard content={item} btnText="Enroll Now" />
             </Slider.Item>
           ))}
         </Slider.Track>
