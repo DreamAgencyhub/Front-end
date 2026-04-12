@@ -35,6 +35,7 @@ export { default as IconIonicIosArrowLeft } from "./IconIonicIosArrowLeft";
 export { default as IconIonicIosArrowRight } from "./IconIonicIosArrowRight";
 export { default as IconIonicIosTimer } from "./IconIonicIosTimer";
 export { default as IconMaterialEmail } from "./IconMaterialEmail";
+export { default as IconMaterialErrorOutline } from "./IconMaterialErrorOutline";
 export { default as IconMaterialLocationOn } from "./IconMaterialLocationOn";
 export { default as IconMaterialReply } from "./IconMaterialReply";
 export { default as IconMaterialUpdate } from "./IconMaterialUpdate";
