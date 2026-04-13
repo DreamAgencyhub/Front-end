@@ -6,7 +6,7 @@ export default function rootLayout({ children }: { children: ReactNode }) {
     <div className="py-8 lg:grid lg:grid-cols-[350px_1fr]">
       <Dashboard />
 
-      {children}
+      <div className="min-h-[50vh]">{children}</div>
     </div>
   );
 }

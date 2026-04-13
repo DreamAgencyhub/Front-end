@@ -3,15 +3,15 @@ import Button from "@/app/components/ui/Button";
 
 export default function Header() {
   return (
-    <div className=" font-semibold bg-secondary-default rounded-3xl p-4 relative flex flex-row justify-between items-center ">
-      <div className="grid grid-cols-3 w-full">
+    <div className=" font-semibold bg-secondary-default rounded-3xl p-4 md:px-4 md:py-6 relative flex flex-row justify-between items-center w-full md:w-[80%]">
+      <div className="grid grid-cols-3 items-center w-full">
         <span>Date</span>
         <span>Subject</span>
         <span>Status</span>
       </div>
 
       <Button
-        className="py-3! rounded-2xl! flex  items-center gap-2 "
+        className="py-3! rounded-2xl! flex  items-center gap-2 md:absolute -right-10 "
         variant="primary"
         size="small"
       >
