@@ -3,7 +3,7 @@ import Button from "@/app/components/ui/Button";
 import { formatDate } from "@/app/utilities/helpers";
 
 interface Header {
-  shouldShowBtn: boolean;
+  shouldShowBtn?: boolean;
   date?: Date;
   status?: string;
   subject?: string;
@@ -16,16 +16,25 @@ export default function Header({
   status,
 }: Header) {
   return (
-    <div className=" font-semibold bg-secondary-default rounded-3xl p-4 md:px-4 md:py-6 relative flex flex-row justify-between items-center w-full md:w-[80%]">
-      <div className="grid grid-cols-3 items-center w-full">
+    <div className=" font-semibold bg-secondary-default rounded-3xl px-4 py-6 md:px-4 md:py-6 relative flex flex-row justify-between items-center w-full md:w-[80%]">
+      <div className="grid grid-cols-3 items-center w-full text-sm md:text-base">
         <span>Date : {formatDate(date)}</span>
         <span className=" block md:hidden">
-          Subject: {subject?.substring(0, 12)}
+          Subject: {`${subject?.substring(0, 8)}...`}
         </span>
         <span className="hidden md:block">
-          Subject: {subject?.substring(0, 30)}
+          Subject: {`${subject?.substring(0, 20)}...`}
         </span>
-        <span>Status: {status}</span>
+        <span>
+          Status:{" "}
+          <span
+            className={`${
+              status === "InProcess" ? "text-sky-600" : "text-green-600"
+            }`}
+          >
+            {status}
+          </span>
+        </span>
       </div>
 
       {shouldShowBtn && (
