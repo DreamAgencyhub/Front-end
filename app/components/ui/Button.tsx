@@ -56,7 +56,7 @@ export default function Button({
     return (
       <Link
         onClick={onClick}
-        className={` ${className} ${sizeStyle} ${variantStyle} text-gray-50 text-center rounded-xl`}
+        className={` ${className} ${sizeStyle} ${variantStyle} text-gray-50 text-center rounded-xl font-semibold`}
         href={directTo}
       >
         {children}
@@ -67,7 +67,7 @@ export default function Button({
     <button
       onClick={onClick}
       disabled={isDisabled}
-      className={`${className} ${sizeStyle} ${variantStyle} cursor-pointer text-nowrap text-gray-50 text-center ring-0 `}
+      className={`${className} ${sizeStyle} ${variantStyle} cursor-pointer text-nowrap text-gray-50 text-center ring-0 font-semibold`}
     >
       {children}
     </button>
