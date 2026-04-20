@@ -31,8 +31,8 @@ const navigationInfo = [
     ),
   },
   {
-    label: "Send Ticket",
-    href: "/support",
+    label: "Send a New Ticket",
+    href: "/profile/support",
     icon: (
       <Envelope className="fill-primary-600 dark:fill-primary-50 stroke-none text-xl  " />
     ),
