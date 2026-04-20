@@ -30,7 +30,7 @@ export default function Textarea({
       <textarea
         id={id}
         placeholder={placeholder}
-        className="bg-default-color w-full py-3 px-4 rounded-2xl focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 transition duration-200 focus:shadow-xl shadow-primary-100/50 h-34 dark:shadow-primary-900/50 dark:ring-offset-primary-400"
+        className="bg-default-color w-full py-3 px-4 rounded-2xl focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 transition duration-200 focus:shadow-xl shadow-primary-100/50 h-34 dark:shadow-primary-900/50 dark:ring-offset-primary-400 dark:placeholder-gray-700!"
         {...register}
       />
     </div>

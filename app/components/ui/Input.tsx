@@ -53,7 +53,7 @@ export default function Input({
         {...register}
         placeholder={placeholder}
         name={name}
-        className={` ${className} w-full bg-default-color py-3 px-4 rounded-2xl focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 transition duration-200 focus:shadow-xl shadow-primary-100/50 dark:shadow-primary-900/50 dark:ring-offset-primary-400 mt-1`}
+        className={` ${className} w-full bg-default-color py-3 px-4 rounded-2xl focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 transition duration-200 focus:shadow-xl shadow-primary-100/50 dark:shadow-primary-900/50 dark:ring-offset-primary-400 mt-1 dark:placeholder-gray-700!`}
         type={name === "password" && isPasswordVisible ? "text" : type}
         disabled={disabled}
         defaultValue={defaultValue}
