@@ -1,6 +1,7 @@
 import { IconFeatherPlusCircle } from "@/app/components/icons";
 import Button from "@/app/components/ui/Button";
 import { formatDate } from "@/app/utilities/helpers";
+import { stat } from "fs/promises";
 
 interface Header {
   shouldShowBtn?: boolean;
@@ -18,21 +19,21 @@ export default function Header({
   return (
     <div className=" font-semibold bg-secondary-default rounded-3xl px-4 py-6 md:px-4 md:py-6 relative flex flex-row justify-between items-center w-full md:w-[80%]">
       <div className="grid grid-cols-3 items-center w-full text-sm md:text-base">
-        <span>Date : {formatDate(date)}</span>
+        <span>Date {date && `:${formatDate(date)}`}</span>
         <span className=" block lg:hidden">
-          Subject: {`${subject?.substring(0, 8)}...`}
+          Subject {subject && `: ${subject?.substring(0, 8)}...`}
         </span>
         <span className="hidden lg:block">
-          Subject: {`${subject?.substring(0, 20)}...`}
+          Subject {subject && `:${subject?.substring(0, 20)}...`}
         </span>
         <span>
-          Status:{" "}
+          Status{" "}
           <span
             className={`${
               status === "InProcess" ? "text-sky-600" : "text-green-600"
             }`}
           >
-            {status}
+            {status && `: ${status}`}
           </span>
         </span>
       </div>
