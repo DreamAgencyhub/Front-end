@@ -4,7 +4,7 @@ import Button from "@/app/components/ui/Button";
 
 export default function CartItem() {
   return (
-    <div className="relative bg-secondary-default rounded-3xl px-4 py-3 flex flex-row items-center gap-4 lg:w-lg lg:justify-between">
+    <div className="relative w-full bg-secondary-default rounded-3xl px-4 py-3 flex flex-row items-center gap-4 lg:w-lg lg:justify-between">
       <div className="rounded-2xl w-12 aspect-square overflow-hidden relative ">
         <Image src={TempImage} alt="Items-cover" width={100} height={100} />
       </div>
