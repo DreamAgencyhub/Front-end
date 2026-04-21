@@ -16,7 +16,7 @@ export default function TicketSubmitForm() {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="bg-secondary-default w-full  rounded-3xl px-4 py-6 flex flex-col gap-5 mx-auto md:max-w-md lg:mt-14 lg:mx-10 "
+      className="bg-secondary-default w-full  rounded-3xl px-4 py-10 flex flex-col gap-5 mx-auto md:max-w-sm lg:mt-14 lg:mx-10 "
     >
       <h3 className="font-semibold ">Sending a New Ticket</h3>
       <Input
