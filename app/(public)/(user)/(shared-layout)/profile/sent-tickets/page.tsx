@@ -1,4 +1,4 @@
-import Header from "../Header";
+import Header from "../../../Header";
 import RowInfo, { Ticket } from "./RowInfo";
 
 const nowDate = new Date();

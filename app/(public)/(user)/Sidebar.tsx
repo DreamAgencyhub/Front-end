@@ -1,4 +1,4 @@
-import Nav from "./Nav";
+import Nav from "./(shared-layout)/profile/Nav";
 import UserInfoCard from "./UserInfoCard";
 import {
   BooksSecond,

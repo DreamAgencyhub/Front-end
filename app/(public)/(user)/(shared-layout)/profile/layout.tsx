@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import Dashboard from "./Dashboard";
+import Dashboard from "../../Dashboard";
 
 export default function rootLayout({ children }: { children: ReactNode }) {
   return (

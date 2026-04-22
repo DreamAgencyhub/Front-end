@@ -1,9 +1,5 @@
-import Header from "./Header";
+import { redirect, RedirectType } from "next/navigation";
 
 export default function page() {
-  return (
-    <div className="px-4">
-      <Header />
-    </div>
-  );
+  redirect("/profile/courses", RedirectType.replace);
 }
