@@ -41,6 +41,8 @@ export default function page() {
           className="object-cover"
         />
       </div>
+
+      <h1>testing feat branch for pr selector action!</h1>
     </div>
   );
 }
