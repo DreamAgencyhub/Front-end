@@ -1,4 +1,6 @@
 import { Metadata } from "next";
+import cover from "@/public/assets/images/about-us.png";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "About",
@@ -7,12 +9,12 @@ export const metadata: Metadata = {
 
 export default function page() {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 min-h-[57vh]">
+    <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[57vh]">
       <div className="w-full  p-8">
         <h1 className="text-3xl font-bold text-primary-500  ">
           About Dream Agency
         </h1>
-        <p className="py-4  text-sm font-semibold">
+        <p className="py-4  text-sm font-semibold md:text-lg">
           Welcome to Dream Agency, your ultimate catalyst for business
           transformation and sustainable growth. We are more than just a
           Learning Management System, we are a dedicated hub where ambition
@@ -29,6 +31,15 @@ export default function page() {
           and the right mentorship. Join us, and let’s turn your business vision
           into a measurable, thriving reality.
         </p>
+      </div>
+      <div className="relative rounded-3xl overflow-hidden mt-6 h-fit mb-16">
+        <Image
+          src={cover}
+          alt={
+            "abut us cover a satisfied man smiling at a Professional consultant woman"
+          }
+          className="object-cover"
+        />
       </div>
     </div>
   );
