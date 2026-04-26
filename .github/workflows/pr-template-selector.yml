@@ -21,7 +21,6 @@ jobs:
           script: |
             const fs = require('fs');
             const branchName = context.payload.pull_request.head.ref;
-             
             let templateFile = '';
             if (branchName.startsWith('feature/') || branchName.startsWith('feat/')) {
               templateFile = '.github/PULL_REQUEST_TEMPLATE/user-story-pr.md';
