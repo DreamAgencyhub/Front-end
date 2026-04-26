@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 import Logo from "@/app/components/ui/Logo";
-import authPagePic from "@/public/assets/images/authPagePic.jpg";
+import authPagePic from "@/public/assets/images/authPagePic.png";
 import Image from "next/image";
 
 export default function Layout({ children }: { children: ReactNode }) {
