@@ -56,4 +56,5 @@ export { default as OnlineCourse } from "./OnlineCourse";
 export { default as OpenEye } from "./OpenEye";
 export { default as Operator } from "./Operator";
 export { default as ShoppingBagSecond } from "./ShoppingBagSecond";
+export { default as ShoppingCart } from "./ShoppingCart";
 export { default as Sun } from "./Sun";

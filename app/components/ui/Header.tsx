@@ -3,6 +3,7 @@ import Button from "./Button";
 import HamburgerMenu from "./HamburgerMenu";
 import Logo from "./Logo";
 import Navigation from "./Navigation";
+import ShoppingCart from "./ShoppingCart";
 import ThemeMode from "./ThemeMode";
 import UserAvatar from "./UserAvatar";
 
@@ -10,7 +11,7 @@ export default function Header() {
   return (
     <div className="bg-secondary-default">
       <div className="max-w-7xl mx-auto px-8">
-        <div className="grid grid-cols-4 lg:grid-cols-9 w-full py-4 items-center text-text-default">
+        <div className="grid grid-cols-5 lg:grid-cols-10 w-full py-4 items-center text-text-default">
           <HamburgerMenu className={"lg:hidden"} />
           <Navigation
             key={"Nav"}
@@ -31,6 +32,7 @@ export default function Header() {
           </Button> */}
 
           <UserAvatar />
+          <ShoppingCart />
         </div>
       </div>
     </div>
