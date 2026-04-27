@@ -1,0 +1,80 @@
+name: 🚀 Auto Draft PR with Template
+
+on:
+  push:
+    branches:
+      - "feat/**"
+      - "fix/**"
+      - "bugfix/**"
+      - "tech/**"
+      - "refactor/**"
+      - "chore/**"
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  auto-pr:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Create Draft Pull Request with Template
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const branch = context.ref.replace('refs/heads/', '');
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+            const base = 'main';  
+
+            let templateFile = '';
+            if (branch.startsWith('feat/')) {
+              templateFile = '.github/PULL_REQUEST_TEMPLATE/user-story-pr.md';
+            } else if (branch.startsWith('fix/') || branch.startsWith('bugfix/')) {
+              templateFile = '.github/PULL_REQUEST_TEMPLATE/bug-fix-pr.md';
+            } else if (branch.startsWith('tech/') || branch.startsWith('refactor/') || branch.startsWith('chore/')) {
+              templateFile = '.github/PULL_REQUEST_TEMPLATE/tech-task-pr.md';
+            }
+
+            if (!templateFile) {
+              core.warning(`No template defined for branch: ${branch}`);
+              return;
+            }
+
+            const fs = require('fs');
+            let templateBody;
+            try {
+              templateBody = fs.readFileSync(templateFile, 'utf8');
+            } catch (err) {
+              core.error(`Template file ${templateFile} not found.`);
+              return;
+            }
+
+            const title = branch.replace(/\//g, ' - ').replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+
+            const { data: pullRequests } = await github.rest.pulls.list({
+              owner,
+              repo,
+              head: `${owner}:${branch}`,
+              state: 'open'
+            });
+
+            if (pullRequests.length > 0) {
+              core.notice(`Pull request already exists for ${branch}: #${pullRequests[0].number}`);
+              return;
+            }
+
+            const { data: pr } = await github.rest.pulls.create({
+              owner,
+              repo,
+              title,
+              head: branch,
+              base,
+              body: templateBody,
+              draft: true
+            });
+
+            core.notice(`✅ Draft PR created: ${pr.html_url}`);
