@@ -41,6 +41,8 @@ export default function page() {
           className="object-cover"
         />
       </div>
+
+      <h1> This is a test!</h1>
     </div>
   );
 }
