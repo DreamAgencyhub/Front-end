@@ -1,13 +1,22 @@
 import { navigationRoutesItems } from "../../data/navigationItems";
 import Button from "./Button";
+import Cookies from "js-cookie";
 import HamburgerMenu from "./HamburgerMenu";
 import Logo from "./Logo";
 import Navigation from "./Navigation";
 import ShoppingCart from "./ShoppingCart";
 import ThemeMode from "./ThemeMode";
 import UserAvatar from "./UserAvatar";
+import { cookies } from "next/headers";
 
-export default function Header() {
+export default async function Header() {
+  const cookieStore = await cookies();
+
+  const theme = cookieStore.get("themeMode")?.value as
+    | "dark"
+    | "light"
+    | undefined;
+
   return (
     <div className="bg-secondary-default">
       <div className="max-w-7xl mx-auto px-8">
@@ -21,7 +30,10 @@ export default function Header() {
             }
           />
           <Logo />
-          <ThemeMode className="lg:order-3 place-self-center " />
+          <ThemeMode
+            initialTheme={theme}
+            className="lg:order-3 place-self-center "
+          />
           {/* <Button
             className={"lg:order-last font-semibold text-sm"}
             directTo="/auth/login"
