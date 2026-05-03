@@ -96,3 +96,10 @@ export function formatDate(date?: Date) {
 
   return ` ${month}/${day}/${year} `;
 }
+
+export function setLocalStorageItem(key: string, value: string) {
+  if (localStorage.getItem(key)) {
+    localStorage.removeItem(key);
+  }
+  localStorage.setItem(key, value);
+}

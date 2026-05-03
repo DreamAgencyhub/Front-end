@@ -6,8 +6,11 @@ import Navigation from "./Navigation";
 import ShoppingCart from "./ShoppingCart";
 import ThemeMode from "./ThemeMode";
 import UserAvatar from "./UserAvatar";
+import { getCookies } from "@/app/utilities/getCookies";
 
-export default function Header() {
+export default async function Header() {
+  const theme = (await getCookies("theme")) as "light" | "dark";
+
   return (
     <div className="bg-secondary-default">
       <div className="max-w-7xl mx-auto px-8">
@@ -21,7 +24,10 @@ export default function Header() {
             }
           />
           <Logo />
-          <ThemeMode className="lg:order-3 place-self-center " />
+          <ThemeMode
+            initialTheme={theme}
+            className="lg:order-3 place-self-center "
+          />
           {/* <Button
             className={"lg:order-last font-semibold text-sm"}
             directTo="/auth/login"
