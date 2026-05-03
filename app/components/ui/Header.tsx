@@ -1,21 +1,15 @@
 import { navigationRoutesItems } from "../../data/navigationItems";
 import Button from "./Button";
-import Cookies from "js-cookie";
 import HamburgerMenu from "./HamburgerMenu";
 import Logo from "./Logo";
 import Navigation from "./Navigation";
 import ShoppingCart from "./ShoppingCart";
 import ThemeMode from "./ThemeMode";
 import UserAvatar from "./UserAvatar";
-import { cookies } from "next/headers";
+import { getCookies } from "@/app/utilities/getCookies";
 
 export default async function Header() {
-  const cookieStore = await cookies();
-
-  const theme = cookieStore.get("themeMode")?.value as
-    | "dark"
-    | "light"
-    | undefined;
+  const theme = (await getCookies("theme")) as "light" | "dark";
 
   return (
     <div className="bg-secondary-default">

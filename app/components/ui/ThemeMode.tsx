@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Moon, Sun } from "../icons";
 import Cookies from "js-cookie";
 
@@ -9,23 +9,21 @@ export default function ThemeMode({
   initialTheme,
 }: {
   className?: string;
-  initialTheme?: "dark" | "light";
+  initialTheme: "dark" | "light";
 }) {
-  console.log(initialTheme);
-
   const [themeMode, setThemeMode] = useState<"dark" | "light">(initialTheme);
+
+  useEffect(() => {
+    document.documentElement.setAttribute("data-theme", initialTheme);
+    Cookies.set("theme", initialTheme, { expires: 365 });
+  }, [initialTheme]);
 
   const handleModeToggle = () => {
     const newThemeMode = themeMode === "dark" ? "light" : "dark";
+    Cookies.set("theme", newThemeMode, { expires: 365 });
     setThemeMode(newThemeMode);
-    Cookies.set("themeMode", newThemeMode, { expires: 365 });
     document.documentElement.setAttribute("data-theme", newThemeMode);
   };
-
-  // useEffect(() => {
-  //   document.documentElement.setAttribute("data-theme", themeMode);
-  //   setLocalStorageItem("themeMode", themeMode);
-  // }, [themeMode]);
 
   return (
     <button

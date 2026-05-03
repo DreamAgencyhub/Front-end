@@ -3,6 +3,7 @@ import { Manrope, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import Footer from "./components/ui/Footer";
 import Header from "./components/ui/Header";
+import { getCookies } from "./utilities/getCookies";
 
 const manrope = Manrope({
   variable: "--font-manrope-sans",
@@ -24,13 +25,15 @@ export const metadata: Metadata = {
     "Dream Agency is a platform that connects consultants with clients. We provide a wide range of services to help consultants grow their business and reach more clients. and everyone can find business online courses to grow their knowledge and business.",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const initialThemeMode = await getCookies("theme");
+
   return (
-    <html lang="en" data-theme="dark" className="scroll-smooth">
+    <html lang="en" data-theme={initialThemeMode} className="scroll-smooth">
       <body
         className={`${manrope.variable} ${spaceGrotesk.variable} font-sans bg-default-color  text-text-default `}
       >
