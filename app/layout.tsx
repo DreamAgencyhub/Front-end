@@ -4,6 +4,8 @@ import "./globals.css";
 import Footer from "./components/ui/Footer";
 import Header from "./components/ui/Header";
 import { getCookies } from "./utilities/getCookies";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import QueryProvider from "./components/QueryProvider";
 
 const manrope = Manrope({
   variable: "--font-manrope-sans",
@@ -37,10 +39,11 @@ export default async function RootLayout({
       <body
         className={`${manrope.variable} ${spaceGrotesk.variable} font-sans bg-default-color  text-text-default `}
       >
-        <Header />
-        <main className="max-w-7xl px-4 mx-auto ">{children}</main>
-
-        <Footer />
+        <QueryProvider>
+          <Header />
+          <main className="max-w-7xl px-4 mx-auto ">{children}</main>
+          <Footer />
+        </QueryProvider>
       </body>
     </html>
   );
