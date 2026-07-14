@@ -4,10 +4,17 @@ import { Icons8Apple, Icons8Google } from "@/app/components/icons";
 import Button from "@/app/components/ui/Button";
 import Input from "@/app/components/ui/Input";
 import { isPasswordValidate } from "@/app/utilities/helpers";
+import { useMutation } from "@tanstack/react-query";
 import Link from "next/link";
 import { useForm } from "react-hook-form";
+import { signUp } from "../../services/apiAuth";
 
 export default function SignupForm() {
+  const { isError, isPending, status, mutate } = useMutation({
+    mutationFn: signUp,
+    // onError: (error) => toast.error(error?.props.message),
+  });
+
   const {
     register,
     formState: { errors },
@@ -19,7 +26,11 @@ export default function SignupForm() {
   });
 
   const onSubmit = () => {
-    console.log(getValues());
+    const { fullName, email, password } = getValues();
+
+    const res = mutate({ fullName, email, password });
+
+    console.log("This is the result!", res);
   };
 
   return (
