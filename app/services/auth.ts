@@ -1,5 +1,5 @@
 import Error from "next/error";
-import { API_BASE_URL } from "../utilities/Constants";
+import { API_BASE_URL } from "../constants/api-base-url";
 
 interface singUp {
   fullName: string;
