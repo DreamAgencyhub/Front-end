@@ -7,7 +7,7 @@ import { isPasswordValidate } from "@/app/utilities/helpers";
 import { useMutation } from "@tanstack/react-query";
 import Link from "next/link";
 import { useForm } from "react-hook-form";
-import { signUp } from "../../services/apiAuth";
+import { signUp } from "../../services/auth";
 
 export default function SignupForm() {
   const { isError, isPending, status, mutate } = useMutation({
