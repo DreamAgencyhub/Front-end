@@ -8,11 +8,18 @@ import { useMutation } from "@tanstack/react-query";
 import Link from "next/link";
 import { useForm } from "react-hook-form";
 import { signUp } from "../../services/auth";
+import toast from "react-hot-toast";
+import { getErrorMessage } from "@/app/utilities/getErrorMessage";
+import { errorCode } from "@/app/constants/err-messages";
 
 export default function SignupForm() {
-  const { isError, isPending, status, mutate } = useMutation({
+  const { isPending, mutate } = useMutation({
     mutationFn: signUp,
-    // onError: (error) => toast.error(error?.props.message),
+    onError: (err) => {
+      if (err?.props?.code === "DUPLICATE_FILED")
+        toast.error(getErrorMessage(errorCode.DUPLICATE_EMAIL));
+    },
+    onSuccess: () => toast.success("You are signed up successfully."),
   });
 
   const {
@@ -28,9 +35,7 @@ export default function SignupForm() {
   const onSubmit = () => {
     const { fullName, email, password } = getValues();
 
-    const res = mutate({ fullName, email, password });
-
-    console.log("This is the result!", res);
+    mutate({ fullName, email, password });
   };
 
   return (
@@ -96,7 +101,12 @@ export default function SignupForm() {
           className="bg-secondary-default"
         />
 
-        <Button variant="primary" size="large" className="font-semibold mt-6">
+        <Button
+          isDisabled={isPending}
+          variant="primary"
+          size="large"
+          className="font-semibold mt-6"
+        >
           Sign up
         </Button>
         <div className="py-2 flex gap-2">

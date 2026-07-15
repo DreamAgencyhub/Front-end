@@ -22,7 +22,7 @@ export async function signUp({ fullName, email, password }: singUp) {
 
   const data = await res.json();
 
-  if (data.status === "Failed") throw new Error(data);
+  if (data.status === "Failed") throw new Error({ ...data });
 
   return data;
 }
