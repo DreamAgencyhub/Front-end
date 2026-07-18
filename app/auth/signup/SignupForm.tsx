@@ -11,15 +11,24 @@ import { signUp } from "../../services/auth";
 import toast from "react-hot-toast";
 import { getErrorMessage } from "@/app/utilities/getErrorMessage";
 import { errorCode } from "@/app/constants/err-messages";
+import { useRouter } from "next/navigation";
+import { useGetCurrentUser } from "../../hooks/useGetCurrentUser";
 
 export default function SignupForm() {
+  const router = useRouter();
+  const currentUser = useGetCurrentUser();
+
   const { isPending, mutate } = useMutation({
     mutationFn: signUp,
     onError: (err) => {
       if (err?.props?.code === "DUPLICATE_FILED")
         toast.error(getErrorMessage(errorCode.DUPLICATE_EMAIL));
     },
-    onSuccess: () => toast.success("You are signed up successfully."),
+    onSuccess: () => {
+      toast.success("You are signed up successfully.");
+      router.back();
+      reset();
+    },
   });
 
   const {

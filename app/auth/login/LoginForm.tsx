@@ -3,10 +3,23 @@
 import { Icons8Apple, Icons8Google } from "@/app/components/icons";
 import Button from "@/app/components/ui/Button";
 import Input from "@/app/components/ui/Input";
+import { useGetCurrentUser } from "@/app/hooks/useGetCurrentUser";
+import { login } from "@/app/services/auth";
+import { useMutation } from "@tanstack/react-query";
 import Link from "next/link";
 import { useForm } from "react-hook-form";
 
 export default function LoginForm() {
+  const currentUser = useGetCurrentUser();
+
+  console.log(currentUser);
+
+  const { mutate } = useMutation({
+    mutationFn: login,
+    onError: (err) => console.log("Error:1", err),
+    onSuccess: (data) => console.log("loged in user:", data),
+  });
+
   const {
     register,
     formState: { errors },
@@ -19,6 +32,10 @@ export default function LoginForm() {
 
   const onSubmit = () => {
     console.log(getValues());
+
+    const { email, password } = getValues();
+
+    mutate({ email, password });
   };
 
   return (
