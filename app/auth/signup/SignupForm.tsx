@@ -7,27 +7,32 @@ import { isPasswordValidate } from "@/app/utilities/helpers";
 import { useMutation } from "@tanstack/react-query";
 import Link from "next/link";
 import { useForm } from "react-hook-form";
-import { signUp } from "../../services/auth";
+import { signUp } from "../../actions/auth-action";
 import toast from "react-hot-toast";
 import { getErrorMessage } from "@/app/utilities/getErrorMessage";
 import { errorCode } from "@/app/constants/err-messages";
 import { useRouter } from "next/navigation";
-import { useGetCurrentUser } from "../../hooks/useGetCurrentUser";
+// import { useGetCurrentUser } from "../../hooks/useGetCurrentUser";
 
 export default function SignupForm() {
   const router = useRouter();
-  const currentUser = useGetCurrentUser();
+  // const currentUser = useGetCurrentUser();
 
   const { isPending, mutate } = useMutation({
     mutationFn: signUp,
-    onError: (err) => {
-      if (err?.props?.code === "DUPLICATE_FILED")
-        toast.error(getErrorMessage(errorCode.DUPLICATE_EMAIL));
-    },
-    onSuccess: () => {
-      toast.success("You are signed up successfully.");
-      router.back();
-      reset();
+
+    onSettled: (res) => {
+      if (!res?.success) {
+        res?.err.code === "DUPLICATE_FILED"
+          ? toast.error(getErrorMessage(errorCode.DUPLICATE_EMAIL))
+          : toast.error("Something went worng! Please try again.");
+      }
+
+      if (res?.success) {
+        toast.success("You are signed up successfully.");
+        router.back();
+        reset();
+      }
     },
   });
 
