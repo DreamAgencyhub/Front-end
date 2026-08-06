@@ -1,5 +1,9 @@
 "use server";
+import { cookies } from "next/headers";
 import UseCallAPI from "../utilities/CallAPI";
+import { DREAM_AGENCY_SESSION_KEY } from "../constants/session";
+import { encryptSession } from "../utilities/session";
+import { UserSession } from "../types/session";
 
 interface AuthModel {
   fullName?: string;
@@ -10,7 +14,6 @@ interface AuthModel {
 const Auth = UseCallAPI();
 
 export async function signUp({ fullName, email, password }: AuthModel) {
-  console.log("TEST", process.env.NODE_ENV);
   const response = await Auth.POST(
     "/auth/signup",
     { fullName, email, password },
@@ -28,9 +31,10 @@ export async function signUp({ fullName, email, password }: AuthModel) {
 
   const data = await response.json();
 
+  await setAuthCookiesAction(data);
+
   return {
     success: true,
-    data,
   };
 }
 
@@ -52,10 +56,24 @@ export async function login({ email, password }: AuthModel) {
 
   const data = await response.json();
 
+  await setAuthCookiesAction(data);
+
   return {
     success: true,
-    data,
   };
+}
+
+export async function setAuthCookiesAction(session: UserSession) {
+  const cookieStore = await cookies();
+
+  const encryptedSession = await encryptSession(session);
+
+  cookieStore.set(DREAM_AGENCY_SESSION_KEY, encryptedSession, {
+    httpOnly: true,
+    sameSite: "strict",
+    secure: process.env.NODE_ENV === "production",
+    path: "/",
+  });
 }
 
 // export async function getCurrentUser() {
