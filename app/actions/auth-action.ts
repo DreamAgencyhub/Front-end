@@ -31,6 +31,8 @@ export async function signUp({ fullName, email, password }: AuthModel) {
 
   const data = await response.json();
 
+  console.log(data);
+
   await setAuthCookiesAction(data);
 
   return {

@@ -1,4 +1,4 @@
-import { JWTPayload, SignJWT } from "jose";
+import { JWTPayload, SignJWT, jwtVerify } from "jose";
 import { UserSession } from "../types/session";
 
 const encodedSessionKey = new TextEncoder().encode(
@@ -11,4 +11,12 @@ export async function encryptSession(session: UserSession) {
       alg: "HS256",
     })
     .sign(encodedSessionKey);
+}
+
+export async function decryptSession(session: string) {
+  const { payload } = await jwtVerify(session, encodedSessionKey, {
+    algorithms: ["HS256"],
+  });
+
+  return payload;
 }

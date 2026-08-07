@@ -22,7 +22,7 @@ export default function SignupForm() {
     mutationFn: signUp,
 
     onSettled: (res) => {
-      if (!res?.success) {
+      if (res?.err) {
         res?.err.code === "DUPLICATE_FILED"
           ? toast.error(getErrorMessage(errorCode.DUPLICATE_EMAIL))
           : toast.error("Something went worng! Please try again.");

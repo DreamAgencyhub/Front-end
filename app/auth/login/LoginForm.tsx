@@ -5,19 +5,25 @@ import Button from "@/app/components/ui/Button";
 import Input from "@/app/components/ui/Input";
 // import { useGetCurrentUser } from "@/app/hooks/useGetCurrentUser";
 import { login } from "@/app/actions/auth-action";
-import { useMutation } from "@tanstack/react-query";
+import { QueryClient, useMutation } from "@tanstack/react-query";
 import Link from "next/link";
 import { useForm } from "react-hook-form";
+import { useRouter } from "next/navigation";
+import toast from "react-hot-toast";
 
 export default function LoginForm() {
-  // const currentUser = useGetCurrentUser();
-
-  // console.log(currentUser);
-
+  const router = useRouter();
+  const queryClient = new QueryClient();
   const { mutate } = useMutation({
     mutationFn: login,
-    onError: (err) => console.log("Error:1", err),
-    onSuccess: (data) => console.log("loged in user:", data),
+    onSettled: async (res) => {
+      if (res?.err) {
+        return toast.error(res.err.message);
+      }
+
+      await queryClient.invalidateQueries({ queryKey: ["currentUser"] });
+      router.replace("/profile/courses");
+    },
   });
 
   const {
@@ -31,8 +37,6 @@ export default function LoginForm() {
   });
 
   const onSubmit = () => {
-    console.log(getValues());
-
     const { email, password } = getValues();
 
     mutate({ email, password });
