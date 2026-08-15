@@ -4,6 +4,7 @@ import { Edit } from "@/app/components/icons";
 import Avatar from "@/app/components/ui/Avatar";
 import Button from "@/app/components/ui/Button";
 import Input from "@/app/components/ui/Input";
+import { useGetUser } from "@/app/hooks/useGetUser";
 import { isPasswordValidate } from "@/app/utilities/helpers";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
@@ -15,13 +16,19 @@ export default function UserInfoCard() {
     formState: { errors },
   } = useForm({ mode: "all" });
 
+  const { data, error, isPending } = useGetUser();
+
   const handleClick = () => setIsEditing((prev) => !prev);
+
+  if (isPending) return <h1> Loading...</h1>;
+
+  if (!data) return null;
 
   return (
     <div className=" relative rounded-3xl bg-secondary-default h-92 w-87 flex flex-col gap-2 items-center scale-90">
-      <Avatar />
+      <Avatar url={data.user.avatar} fullName={data.user.fullName} />
       {isEditing && (
-        <label className="relative z-50 bg-secondary-default p-2 rounded-full top-12 cursor-pointer hover:bg-secondary-muted">
+        <label className="relative z-50 bg-secondary-default p-2 rounded-full top-10 cursor-pointer hover:bg-secondary-muted">
           <Edit className="fill-primary-500 stroke-none text-xs " />
           <Input
             name="usersAvatar"
@@ -37,7 +44,7 @@ export default function UserInfoCard() {
           disabled={!isEditing}
           errors={errors}
           type="text"
-          defaultValue={"Mohammad Alizadeh"}
+          defaultValue={data.user.fullName}
           name="fullName"
           register={register("fullName", {
             minLength: {
@@ -52,7 +59,7 @@ export default function UserInfoCard() {
           disabled={!isEditing}
           errors={errors}
           type="text"
-          defaultValue={"mohammadrezaalizadeh@gmail.com"}
+          defaultValue={data.user.email}
           name="email"
           register={register("email", {
             pattern: {
@@ -82,9 +89,9 @@ export default function UserInfoCard() {
         {isEditing && (
           <Button
             onClick={handleClick}
-            size="medium"
+            size="small"
             variant="danger"
-            className="w-full font-semibold "
+            className="w-full font-semibold !text-sm"
           >
             Cancel
           </Button>
@@ -92,9 +99,9 @@ export default function UserInfoCard() {
 
         <Button
           onClick={handleClick}
-          size="medium"
+          size="small"
           variant="primary"
-          className="w-full font-semibold "
+          className="w-full font-semibold !text-sm"
         >
           {!isEditing ? " Edit your profile" : "Submit Changes"}
         </Button>

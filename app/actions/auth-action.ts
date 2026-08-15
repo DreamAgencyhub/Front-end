@@ -29,9 +29,7 @@ export async function signUp({ fullName, email, password }: AuthModel) {
     };
   }
 
-  const data = await response.json();
-
-  console.log(data);
+  const { data } = await response.json();
 
   await setAuthCookiesAction(data);
 
@@ -56,7 +54,7 @@ export async function login({ email, password }: AuthModel) {
     };
   }
 
-  const data = await response.json();
+  const { data } = await response.json();
 
   await setAuthCookiesAction(data);
 
@@ -76,6 +74,13 @@ export async function setAuthCookiesAction(session: UserSession) {
     secure: process.env.NODE_ENV === "production",
     path: "/",
   });
+}
+
+export async function signOutAction() {
+  (await cookies()).delete(DREAM_AGENCY_SESSION_KEY);
+  return {
+    success: true,
+  };
 }
 
 // export async function getCurrentUser() {

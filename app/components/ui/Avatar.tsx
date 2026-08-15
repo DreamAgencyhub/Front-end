@@ -1,12 +1,17 @@
 import Image from "next/image";
-import consultantPic from "@/public/assets/images/testing-profile.jpg";
+// import consultantPic from "@/public/assets/images/testing-profile.jpg";
+import AvatarPlaceholder from "./AvatarPlaceholder";
 
 export default function Avatar({
   responsive,
   noRotate,
+  url,
+  fullName,
 }: {
   responsive?: boolean;
   noRotate?: boolean;
+  url?: string;
+  fullName: string;
 }) {
   return (
     <div
@@ -25,7 +30,11 @@ export default function Avatar({
             responsive && "md:-rotate-90"
           }`}
         >
-          <Image src={consultantPic} alt="consultants_profile" />
+          {url ? (
+            <Image src={url} alt="consultants_profile" />
+          ) : (
+            <AvatarPlaceholder fullName={fullName} />
+          )}
         </div>
       </div>
       <div

@@ -1,11 +1,19 @@
 import { NextRequest, NextResponse } from "next/server";
+import themeMiddleware from "./app/core/middleware/themeMiddleware";
+import authMiddleware from "./app/core/middleware/authMiddleware";
 
 export function proxy(request: NextRequest) {
-  // const theme = request.cookies.get("theme")?.value || "light";
+  const authResponse = authMiddleware(request);
 
-  // const response = NextResponse.next();
+  const themeResponse = themeMiddleware(request);
 
-  // response.cookies.set("theme", theme);
+  if (authResponse) {
+    return authResponse;
+  }
 
-  return NextResponse.next();
+  if (themeResponse) {
+    return themeResponse;
+  }
+
+  NextResponse.next();
 }

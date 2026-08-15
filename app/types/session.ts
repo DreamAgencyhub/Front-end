@@ -1,5 +1,6 @@
 export interface UserSession {
   accessToken: string;
+  exp: number;
   user: {
     fullName: string;
     email: string;
