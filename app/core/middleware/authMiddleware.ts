@@ -27,25 +27,27 @@ export default async function authMiddleware(request: NextRequest) {
     }
   }
 
-  try {
-    const decryptedSession = (await decryptSession(
-      session,
-    )) as unknown as UserSession;
-    const now = Date.now();
-    const hasSessionExpired = decryptedSession.exp < now;
+  if (session) {
+    try {
+      const decryptedSession = (await decryptSession(
+        session,
+      )) as unknown as UserSession;
+      const now = Date.now();
+      const hasSessionExpired = decryptedSession.exp < now;
 
-    if (hasSessionExpired && isProtectedRoute) {
-      const cookieStore = await cookies();
-      cookieStore.delete(DREAM_AGENCY_SESSION_KEY);
+      if (hasSessionExpired && isProtectedRoute) {
+        const cookieStore = await cookies();
+        cookieStore.delete(DREAM_AGENCY_SESSION_KEY);
 
-      return NextResponse.redirect(new URL("/auth/login", request.url));
+        return NextResponse.redirect(new URL("/auth/login", request.url));
+      }
+
+      if (!hasSessionExpired && isAuthRoute) {
+        return NextResponse.redirect(new URL("/profile/courses", request.url));
+      }
+    } catch (err) {
+      console.log(err);
     }
-
-    if (!hasSessionExpired && isAuthRoute) {
-      return NextResponse.redirect(new URL("/profile/courses", request.url));
-    }
-  } catch (err) {
-    console.log(err);
   }
 
   return null;
