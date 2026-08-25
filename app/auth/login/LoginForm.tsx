@@ -119,6 +119,15 @@ export default function LoginForm() {
           Sign up
         </Link>
       </span>
+      <span className="text-text-muted text-center text-sm">
+        Forgot your password?{" "}
+        <Link
+          className="underline font-semibold text-text-default hover:text-text-muted "
+          href={"/auth/forgot-password"}
+        >
+          reset my password
+        </Link>
+      </span>
     </div>
   );
 }

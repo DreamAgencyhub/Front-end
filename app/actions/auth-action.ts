@@ -83,14 +83,19 @@ export async function signOutAction() {
   };
 }
 
-// export async function getCurrentUser() {
-//   const res = await fetch(`${API_BASE_URL}/auth/getMe`, {
-//     credentials: "include",
-//   });
+export async function forgotPassword(email: string) {
+  const res = await Auth.POST("/auth/forgotPassword", { email });
 
-//   const data = await res.json();
+  if (res.ok) {
+    const data = await res.json();
 
-//   if (data.status === "Failed") throw new Error({ ...data });
+    return {
+      success: true,
+      data,
+    };
+  }
 
-//   return data;
-// }
+  return {
+    success: false,
+  };
+}
