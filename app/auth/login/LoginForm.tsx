@@ -22,6 +22,7 @@ export default function LoginForm() {
       }
 
       await queryClient.invalidateQueries({ queryKey: ["currentUser"] });
+      toast.success("Welcome Back! ");
       router.replace("/profile/courses");
     },
   });

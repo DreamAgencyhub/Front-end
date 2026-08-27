@@ -37,7 +37,21 @@ class CallAPI {
     });
   }
 
-  PUT() {}
+  PATCH(endPoint: string, body: object, credentials?: CredentialsType) {
+    const cleanedEndpoint = cleanURL(endPoint);
+
+    return fetch(`${this.baseURL}/${cleanedEndpoint}`, {
+      method: "PATCH",
+
+      credentials: credentials,
+
+      headers: {
+        "Content-Type": "application/json",
+      },
+
+      body: JSON.stringify({ ...body }),
+    });
+  }
 
   DELETE() {}
 }

@@ -1,10 +1,11 @@
 "use client";
 
-import { forgotPassword } from "@/app/actions/auth-action";
+import { resetPassword } from "@/app/actions/auth-action";
 import Button from "@/app/components/ui/Button";
 import Input from "@/app/components/ui/Input";
 import { isPasswordValidate } from "@/app/utilities/helpers";
 import { useMutation } from "@tanstack/react-query";
+import { useParams } from "next/navigation";
 import { useForm } from "react-hook-form";
 
 export default function ResetPasswordForm() {
@@ -18,17 +19,22 @@ export default function ResetPasswordForm() {
     mode: "all",
   });
 
+  const { token } = useParams<{ token: string }>();
+
   const { mutate, isPending, isError } = useMutation({
-    mutationFn: (email: string) => forgotPassword(email),
+    mutationFn: ({ token, password }: { token: string; password: string }) =>
+      resetPassword(token, password),
     onSettled: (res) => {
       console.log(res);
     },
   });
 
   const onSubmit = () => {
-    const { email } = getValues();
+    const { password } = getValues();
 
-    mutate(email);
+    if (token && password) {
+      mutate({ token, password });
+    }
   };
 
   return (

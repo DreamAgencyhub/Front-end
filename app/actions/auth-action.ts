@@ -86,16 +86,41 @@ export async function signOutAction() {
 export async function forgotPassword(email: string) {
   const res = await Auth.POST("/auth/forgotPassword", { email });
 
-  if (res.ok) {
-    const data = await res.json();
+  if (!res.ok) {
+    const err = await res.json();
 
     return {
-      success: true,
-      data,
+      success: false,
+      err,
     };
   }
 
+  const data = await res.json();
+
   return {
-    success: false,
+    success: true,
+    data,
+  };
+}
+
+export async function resetPassword(resetToken: string, newPassword: string) {
+  const res = await Auth.PATCH(`/auth/resetPassword/${resetToken}`, {
+    password: newPassword,
+  });
+
+  if (!res.ok) {
+    const err = await res.json();
+
+    return {
+      success: false,
+      err,
+    };
+  }
+
+  const data = await res.json();
+
+  return {
+    success: true,
+    data,
   };
 }
