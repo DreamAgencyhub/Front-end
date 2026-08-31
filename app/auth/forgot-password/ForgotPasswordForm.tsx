@@ -3,6 +3,7 @@
 import { forgotPassword } from "@/app/actions/auth-action";
 import Button from "@/app/components/ui/Button";
 import Input from "@/app/components/ui/Input";
+import { isEmailValid } from "@/app/utilities/helpers";
 import { useMutation } from "@tanstack/react-query";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
@@ -74,11 +75,7 @@ export default function ForgotPasswordForm() {
               value: 200,
               message: "Email should not be more that 200 characters.",
             },
-            pattern: {
-              value:
-                /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i,
-              message: "Please Provide a valid email.",
-            },
+            validate: (value) => isEmailValid(value),
           })}
           errors={errors}
           className="bg-secondary-default"

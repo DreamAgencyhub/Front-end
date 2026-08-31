@@ -3,7 +3,7 @@
 import { Icons8Apple, Icons8Google } from "@/app/components/icons";
 import Button from "@/app/components/ui/Button";
 import Input from "@/app/components/ui/Input";
-import { isPasswordValidate } from "@/app/utilities/helpers";
+import { isEmailValid, isPasswordValidate } from "@/app/utilities/helpers";
 import { useMutation } from "@tanstack/react-query";
 import Link from "next/link";
 import { useForm } from "react-hook-form";
@@ -92,11 +92,7 @@ export default function SignupForm() {
               value: 200,
               message: "Email should not be more that 200 characters.",
             },
-            pattern: {
-              value:
-                /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i,
-              message: "Please Provide a valid email.",
-            },
+            validate: (value) => isEmailValid(value),
           })}
           errors={errors}
           className="bg-secondary-default"

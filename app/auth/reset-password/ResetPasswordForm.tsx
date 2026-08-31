@@ -3,7 +3,7 @@
 import { resetPassword } from "@/app/actions/auth-action";
 import Button from "@/app/components/ui/Button";
 import Input from "@/app/components/ui/Input";
-import { isPasswordValidate } from "@/app/utilities/helpers";
+import { isPasswordValid } from "@/app/utilities/helpers";
 import { useMutation } from "@tanstack/react-query";
 import { useParams, useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
@@ -66,7 +66,7 @@ export default function ResetPasswordForm() {
           label="Password"
           register={register("password", {
             required: "*This field is required.",
-            validate: (value) => isPasswordValidate(value),
+            validate: (value) => isPasswordValid(value),
           })}
           errors={errors}
           className="bg-secondary-default"

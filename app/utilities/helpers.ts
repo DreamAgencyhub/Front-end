@@ -1,6 +1,6 @@
 import { MouseEvent } from "react";
 
-export function isPasswordValidate(password: string): string | boolean {
+export function isPasswordValid(password: string): string | boolean {
   const validation = {
     length: {
       isValid: /^.{8,20}$/.test(password),
@@ -27,6 +27,20 @@ export function isPasswordValidate(password: string): string | boolean {
   if (!validation.hasUpper.isValid) return validation.hasUpper.errorMessage;
 
   if (!validation.hasNumber.isValid) return validation.hasNumber.errorMessage;
+
+  return true;
+}
+
+export function isEmailValid(email: string): string | boolean {
+  const validation = {
+    isValid:
+      /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i.test(
+        email,
+      ),
+    errMessage: "Please enter a valid email!",
+  };
+
+  if (!validation.isValid) return validation.errMessage;
 
   return true;
 }

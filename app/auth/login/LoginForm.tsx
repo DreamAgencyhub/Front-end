@@ -10,6 +10,7 @@ import Link from "next/link";
 import { useForm } from "react-hook-form";
 import { useRouter } from "next/navigation";
 import toast from "react-hot-toast";
+import { isEmailValid } from "@/app/utilities/helpers";
 
 export default function LoginForm() {
   const router = useRouter();
@@ -68,11 +69,7 @@ export default function LoginForm() {
               value: 200,
               message: "Email should not be more that 200 characters.",
             },
-            pattern: {
-              value:
-                /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i,
-              message: "Please Provide a valid email.",
-            },
+            validate: (value) => isEmailValid(value),
           })}
           errors={errors}
           className="bg-secondary-default"
