@@ -5,8 +5,9 @@ import Button from "@/app/components/ui/Button";
 import Input from "@/app/components/ui/Input";
 import { isPasswordValidate } from "@/app/utilities/helpers";
 import { useMutation } from "@tanstack/react-query";
-import { useParams } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
+import toast from "react-hot-toast";
 
 export default function ResetPasswordForm() {
   const {
@@ -19,13 +20,21 @@ export default function ResetPasswordForm() {
     mode: "all",
   });
 
+  const router = useRouter();
+
   const { token } = useParams<{ token: string }>();
 
-  const { mutate, isPending, isError } = useMutation({
+  const { mutate, isPending } = useMutation({
     mutationFn: ({ token, password }: { token: string; password: string }) =>
       resetPassword(token, password),
     onSettled: (res) => {
-      console.log(res);
+      if (res?.err) {
+        toast.error("Something went wrong! please try again.");
+      }
+
+      toast.success("Your password has been changed successfully.");
+      router.push("/auth/login");
+      reset();
     },
   });
 
@@ -63,7 +72,12 @@ export default function ResetPasswordForm() {
           className="bg-secondary-default"
         />
 
-        <Button variant="primary" size="large" className="font-semibold mt-6">
+        <Button
+          isDisabled={isPending}
+          variant="primary"
+          size="large"
+          className="font-semibold mt-6"
+        >
           Submit
         </Button>
       </form>

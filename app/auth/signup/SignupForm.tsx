@@ -12,20 +12,18 @@ import toast from "react-hot-toast";
 import { getErrorMessage } from "@/app/utilities/getErrorMessage";
 import { errorCode } from "@/app/constants/err-messages";
 import { useRouter } from "next/navigation";
-// import { useGetCurrentUser } from "../../hooks/useGetCurrentUser";
 
 export default function SignupForm() {
   const router = useRouter();
-  // const currentUser = useGetCurrentUser();
 
   const { isPending, mutate } = useMutation({
     mutationFn: signUp,
 
     onSettled: (res) => {
-      if (res?.err) {
-        res?.err.code === "DUPLICATE_FILED"
-          ? toast.error(getErrorMessage(errorCode.DUPLICATE_EMAIL))
-          : toast.error("Something went worng! Please try again.");
+      if (res?.err.code === "DUPLICATE_FILED") {
+        toast.error(getErrorMessage(errorCode.DUPLICATE_EMAIL));
+      } else {
+        toast.error("Something went wrong! Please try again.");
       }
 
       if (res?.success) {

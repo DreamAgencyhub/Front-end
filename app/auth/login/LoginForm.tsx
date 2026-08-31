@@ -14,7 +14,7 @@ import toast from "react-hot-toast";
 export default function LoginForm() {
   const router = useRouter();
   const queryClient = new QueryClient();
-  const { mutate } = useMutation({
+  const { mutate, isPending } = useMutation({
     mutationFn: login,
     onSettled: async (res) => {
       if (res?.err) {
@@ -24,6 +24,7 @@ export default function LoginForm() {
       await queryClient.invalidateQueries({ queryKey: ["currentUser"] });
       toast.success("Welcome Back! ");
       router.replace("/profile/courses");
+      reset();
     },
   });
 
@@ -87,7 +88,12 @@ export default function LoginForm() {
           className="bg-secondary-default"
         />
 
-        <Button variant="primary" size="large" className="font-semibold mt-6">
+        <Button
+          isDisabled={isPending}
+          variant="primary"
+          size="large"
+          className="font-semibold mt-6"
+        >
           Sign in
         </Button>
         <div className="py-2 flex gap-2">

@@ -5,6 +5,7 @@ import Button from "@/app/components/ui/Button";
 import Input from "@/app/components/ui/Input";
 import { useMutation } from "@tanstack/react-query";
 import { useForm } from "react-hook-form";
+import toast from "react-hot-toast";
 
 export default function ForgotPasswordForm() {
   const {
@@ -17,10 +18,13 @@ export default function ForgotPasswordForm() {
     mode: "all",
   });
 
-  const { mutate, isPending, isError } = useMutation({
+  const { mutate, isPending, isSuccess } = useMutation({
     mutationFn: (email: string) => forgotPassword(email),
     onSettled: (res) => {
-      console.log(res);
+      if (res?.err) {
+        toast.error("Something went wrong! please try again!");
+      }
+      reset();
     },
   });
 
@@ -29,6 +33,22 @@ export default function ForgotPasswordForm() {
 
     mutate(email);
   };
+
+  if (isSuccess) {
+    return (
+      <div className="text-center flex flex-col gap-6">
+        <h1 className="text-2xl font-semibold ">
+          A reset password link has been sent to your email.
+        </h1>
+        <span className="text-ms font-semibold ">
+          Please checkout your emails inbox.{" "}
+        </span>
+        <span className="text-sm">
+          if you did not find the email in your inbox checkout the spams.
+        </span>
+      </div>
+    );
+  }
 
   return (
     <div className="flex flex-col justify-center  items-center md:items-stretch md:w-98  py-10 gap-6 col-span-1">
@@ -64,7 +84,12 @@ export default function ForgotPasswordForm() {
           className="bg-secondary-default"
         />
 
-        <Button variant="primary" size="large" className="font-semibold mt-6">
+        <Button
+          isDisabled={isPending}
+          variant="primary"
+          size="large"
+          className="font-semibold mt-6"
+        >
           Submit
         </Button>
       </form>
