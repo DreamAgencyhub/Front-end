@@ -5,7 +5,8 @@ import Avatar from "@/app/components/ui/Avatar";
 import Button from "@/app/components/ui/Button";
 import Input from "@/app/components/ui/Input";
 import { useGetUser } from "@/app/hooks/useGetUser";
-import { isPasswordValidate } from "@/app/utilities/helpers";
+import { isEmailValid, isPasswordValid } from "@/app/utilities/helpers";
+
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 
@@ -16,7 +17,7 @@ export default function UserInfoCard() {
     formState: { errors },
   } = useForm({ mode: "all" });
 
-  const { data, error, isPending } = useGetUser();
+  const { data, isPending } = useGetUser();
 
   const handleClick = () => setIsEditing((prev) => !prev);
 
@@ -62,11 +63,7 @@ export default function UserInfoCard() {
           defaultValue={data.user.email}
           name="email"
           register={register("email", {
-            pattern: {
-              value:
-                /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i,
-              message: "Please Provide a valid email.",
-            },
+            validate: (value) => isEmailValid(value),
             required: "This filed is required!",
           })}
         />
@@ -79,7 +76,7 @@ export default function UserInfoCard() {
             defaultValue={"This is password1!"}
             name="password"
             register={register("password", {
-              validate: (value) => isPasswordValidate(value),
+              validate: (value) => isPasswordValid(value),
               required: "This filed is required!",
             })}
           />

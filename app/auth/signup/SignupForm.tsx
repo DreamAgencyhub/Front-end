@@ -3,7 +3,7 @@
 import { Icons8Apple, Icons8Google } from "@/app/components/icons";
 import Button from "@/app/components/ui/Button";
 import Input from "@/app/components/ui/Input";
-import { isEmailValid, isPasswordValidate } from "@/app/utilities/helpers";
+import { isEmailValid, isPasswordValid } from "@/app/utilities/helpers";
 import { useMutation } from "@tanstack/react-query";
 import Link from "next/link";
 import { useForm } from "react-hook-form";
@@ -103,7 +103,7 @@ export default function SignupForm() {
           label="Password"
           register={register("password", {
             required: "*This field is required.",
-            validate: (value) => isPasswordValidate(value),
+            validate: (value) => isPasswordValid(value),
           })}
           errors={errors}
           className="bg-secondary-default"

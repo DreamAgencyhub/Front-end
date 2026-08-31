@@ -50,7 +50,7 @@ export default function Sidebar() {
 
         <Modal.Open opens="signout">
           <Button className="flex flex-row items-center" variant="primary">
-            <Exit className="fill-primary-600 dark:fill-primary-50 stroke-none text-xl  " />
+            <Exit className="fill-primary-600 dark:fill-primary-50 stroke-none text-xl" />
             <span className="mx-auto">Log Out</span>
           </Button>
         </Modal.Open>
