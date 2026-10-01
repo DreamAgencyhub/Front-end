@@ -1,5 +1,3 @@
-import { redirect, RedirectType } from "next/navigation";
-
 export default function page() {
-  redirect("/profile/courses", RedirectType.replace);
+  return <h1 className=" text-center">This is your profile !</h1>;
 }

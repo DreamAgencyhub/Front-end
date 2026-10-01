@@ -5,7 +5,7 @@ import Button from "@/app/components/ui/Button";
 import Input from "@/app/components/ui/Input";
 // import { useGetCurrentUser } from "@/app/hooks/useGetCurrentUser";
 import { login } from "@/app/actions/auth-action";
-import { QueryClient, useMutation } from "@tanstack/react-query";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 import Link from "next/link";
 import { useForm } from "react-hook-form";
 import { useRouter } from "next/navigation";
@@ -14,7 +14,7 @@ import { isEmailValid } from "@/app/utilities/helpers";
 
 export default function LoginForm() {
   const router = useRouter();
-  const queryClient = new QueryClient();
+  const queryClient = useQueryClient();
   const { mutate, isPending } = useMutation({
     mutationFn: login,
     onSettled: async (res) => {
@@ -23,6 +23,7 @@ export default function LoginForm() {
       }
 
       await queryClient.invalidateQueries({ queryKey: ["currentUser"] });
+
       toast.success("Welcome Back! ");
       router.replace("/profile/courses");
       reset();

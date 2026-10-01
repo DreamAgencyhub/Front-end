@@ -33,6 +33,7 @@ export default function ResetPasswordForm() {
       }
 
       toast.success("Your password has been changed successfully.");
+
       router.push("/auth/login");
       reset();
     },

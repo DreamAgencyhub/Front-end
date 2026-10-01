@@ -45,7 +45,7 @@ export default function ForgotPasswordForm() {
           Please checkout your emails inbox.{" "}
         </span>
         <span className="text-sm">
-          if you did not find the email in your inbox checkout the spams.
+          if you did not find the email in your inbox checkout the spam.
         </span>
       </div>
     );
