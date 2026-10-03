@@ -9,6 +9,7 @@ export default async function authMiddleware(request: NextRequest) {
 
   const authRotes = ["/auth/login", "/auth/signup"];
   const protectedRoute = [
+    "/profile",
     "/profile/courses",
     "/profile/reservations",
     "/profile/sent-tickets",
