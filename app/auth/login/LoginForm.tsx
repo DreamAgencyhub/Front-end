@@ -3,10 +3,33 @@
 import { Icons8Apple, Icons8Google } from "@/app/components/icons";
 import Button from "@/app/components/ui/Button";
 import Input from "@/app/components/ui/Input";
+// import { useGetCurrentUser } from "@/app/hooks/useGetCurrentUser";
+import { login } from "@/app/actions/auth-action";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 import Link from "next/link";
 import { useForm } from "react-hook-form";
+import { useRouter } from "next/navigation";
+import toast from "react-hot-toast";
+import { isEmailValid } from "@/app/utilities/helpers";
 
 export default function LoginForm() {
+  const router = useRouter();
+  const queryClient = useQueryClient();
+  const { mutate, isPending } = useMutation({
+    mutationFn: login,
+    onSettled: async (res) => {
+      if (res?.err) {
+        return toast.error(res.err.message);
+      }
+
+      await queryClient.invalidateQueries({ queryKey: ["currentUser"] });
+
+      toast.success("Welcome Back! ");
+      router.replace("/profile/courses");
+      reset();
+    },
+  });
+
   const {
     register,
     formState: { errors },
@@ -18,7 +41,9 @@ export default function LoginForm() {
   });
 
   const onSubmit = () => {
-    console.log(getValues());
+    const { email, password } = getValues();
+
+    mutate({ email, password });
   };
 
   return (
@@ -45,11 +70,7 @@ export default function LoginForm() {
               value: 200,
               message: "Email should not be more that 200 characters.",
             },
-            pattern: {
-              value:
-                /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i,
-              message: "Please Provide a valid email.",
-            },
+            validate: (value) => isEmailValid(value),
           })}
           errors={errors}
           className="bg-secondary-default"
@@ -65,7 +86,12 @@ export default function LoginForm() {
           className="bg-secondary-default"
         />
 
-        <Button variant="primary" size="large" className="font-semibold mt-6">
+        <Button
+          isDisabled={isPending}
+          variant="primary"
+          size="large"
+          className="font-semibold mt-6"
+        >
           Sign in
         </Button>
         <div className="py-2 flex gap-2">
@@ -96,6 +122,15 @@ export default function LoginForm() {
           href={"/auth/signup"}
         >
           Sign up
+        </Link>
+      </span>
+      <span className="text-text-muted text-center text-sm">
+        Forgot your password?{" "}
+        <Link
+          className="underline font-semibold text-text-default hover:text-text-muted "
+          href={"/auth/forgot-password"}
+        >
+          reset my password
         </Link>
       </span>
     </div>

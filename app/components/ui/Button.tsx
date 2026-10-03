@@ -67,7 +67,7 @@ export default function Button({
     <button
       onClick={onClick}
       disabled={isDisabled}
-      className={`${className} ${sizeStyle} ${variantStyle} cursor-pointer text-nowrap text-gray-50 text-center ring-0 font-semibold`}
+      className={`${className} ${sizeStyle} ${variantStyle} cursor-pointer text-nowrap text-gray-50 text-center ring-0 font-semibold disabled:cursor-not-allowed disabled:bg-blend-exclusion1`}
     >
       {children}
     </button>

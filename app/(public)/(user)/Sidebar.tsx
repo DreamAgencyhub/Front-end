@@ -1,3 +1,4 @@
+import Button from "@/app/components/ui/Button";
 import Nav from "./(shared-layout)/profile/Nav";
 import UserInfoCard from "./UserInfoCard";
 import {
@@ -7,6 +8,7 @@ import {
   Envelopes,
   Exit,
 } from "@/app/components/icons";
+import Modal from "@/app/components/ui/modal/Modal";
 
 const navigationInfo = [
   {
@@ -37,14 +39,6 @@ const navigationInfo = [
       <Envelope className="fill-primary-600 dark:fill-primary-50 stroke-none text-xl  " />
     ),
   },
-  {
-    label: "Log out",
-    href: "/support",
-    icon: (
-      <Exit className="fill-primary-600 dark:fill-primary-50 stroke-none text-xl  " />
-    ),
-    className: "bg-primary-500! text-gray-50! ",
-  },
 ];
 
 export default function Sidebar() {
@@ -53,6 +47,13 @@ export default function Sidebar() {
       <UserInfoCard />
       <div className="flex flex-col gap-4 w-full px-4">
         <Nav NavigationData={navigationInfo} />
+
+        <Modal.Open opens="signout">
+          <Button className="flex flex-row items-center" variant="primary">
+            <Exit className="fill-primary-600 dark:fill-primary-50 stroke-none text-xl" />
+            <span className="mx-auto">Log Out</span>
+          </Button>
+        </Modal.Open>
       </div>
     </>
   );

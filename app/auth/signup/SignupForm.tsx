@@ -3,11 +3,37 @@
 import { Icons8Apple, Icons8Google } from "@/app/components/icons";
 import Button from "@/app/components/ui/Button";
 import Input from "@/app/components/ui/Input";
-import { isPasswordValidate } from "@/app/utilities/helpers";
+import { isEmailValid, isPasswordValid } from "@/app/utilities/helpers";
+import { useMutation } from "@tanstack/react-query";
 import Link from "next/link";
 import { useForm } from "react-hook-form";
+import { signUp } from "../../actions/auth-action";
+import toast from "react-hot-toast";
+import { getErrorMessage } from "@/app/utilities/getErrorMessage";
+import { errorCode } from "@/app/constants/err-messages";
+import { useRouter } from "next/navigation";
 
 export default function SignupForm() {
+  const router = useRouter();
+
+  const { isPending, mutate } = useMutation({
+    mutationFn: signUp,
+
+    onSettled: (res) => {
+      if (res?.err.code === "DUPLICATE_FILED") {
+        toast.error(getErrorMessage(errorCode.DUPLICATE_EMAIL));
+      } else {
+        toast.error("Something went wrong! Please try again.");
+      }
+
+      if (res?.success) {
+        toast.success("You are signed up successfully.");
+        router.back();
+        reset();
+      }
+    },
+  });
+
   const {
     register,
     formState: { errors },
@@ -19,7 +45,9 @@ export default function SignupForm() {
   });
 
   const onSubmit = () => {
-    console.log(getValues());
+    const { fullName, email, password } = getValues();
+
+    mutate({ fullName, email, password });
   };
 
   return (
@@ -64,11 +92,7 @@ export default function SignupForm() {
               value: 200,
               message: "Email should not be more that 200 characters.",
             },
-            pattern: {
-              value:
-                /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i,
-              message: "Please Provide a valid email.",
-            },
+            validate: (value) => isEmailValid(value),
           })}
           errors={errors}
           className="bg-secondary-default"
@@ -79,13 +103,18 @@ export default function SignupForm() {
           label="Password"
           register={register("password", {
             required: "*This field is required.",
-            validate: (value) => isPasswordValidate(value),
+            validate: (value) => isPasswordValid(value),
           })}
           errors={errors}
           className="bg-secondary-default"
         />
 
-        <Button variant="primary" size="large" className="font-semibold mt-6">
+        <Button
+          isDisabled={isPending}
+          variant="primary"
+          size="large"
+          className="font-semibold mt-6"
+        >
           Sign up
         </Button>
         <div className="py-2 flex gap-2">
